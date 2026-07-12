@@ -168,6 +168,16 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
   .toast .toast-seal{width:20px;height:20px;flex-shrink:0;}
 
+  .product-photo{cursor:zoom-in;position:relative;}
+  .play-badge{position:absolute;right:10px;bottom:10px;background:rgba(26,23,20,0.75);color:var(--paper);border:1px solid var(--gold);font-size:11px;padding:4px 9px;letter-spacing:1px;pointer-events:none;}
+  .lightbox{position:fixed;inset:0;background:rgba(26,23,20,0.9);z-index:400;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;opacity:0;pointer-events:none;transition:opacity .3s;padding:4vh 4vw;}
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox-media{max-width:min(920px,92vw);max-height:78vh;display:flex;align-items:center;justify-content:center;}
+  .lightbox-media img,.lightbox-media video{max-width:100%;max-height:78vh;display:block;border:1px solid rgba(176,141,87,0.4);background:#000;}
+  .lightbox-caption{color:var(--paper);font-size:14px;letter-spacing:1px;display:flex;align-items:baseline;gap:14px;}
+  .lightbox-caption .lc-origin{font-size:12px;color:var(--gold);letter-spacing:2px;}
+  .lightbox-close{position:absolute;top:22px;right:28px;background:none;border:1px solid var(--gold);color:var(--paper);width:40px;height:40px;font-size:22px;line-height:1;cursor:pointer;transition:background .25s,color .25s;}
+  .lightbox-close:hover{background:var(--gold);color:var(--ink);}
   @media(max-width:900px){
     .intro{grid-template-columns:1fr;gap:30px;}
     .hero-inner{grid-template-columns:1fr;}
@@ -329,6 +339,12 @@
   </div>
 </div>
 
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
+  <div class="lightbox-media" id="lightboxMedia"></div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <div class="toast" id="toast">
   <svg class="toast-seal" viewBox="0 0 40 40"><rect x="2" y="2" width="36" height="36" fill="none" stroke="#B08D57" stroke-width="2"/><text x="20" y="26" text-anchor="middle" fill="#B08D57" font-size="14" font-weight="900">已</text></svg>
   <span id="toastMsg">宝物箱に追加しました</span>
@@ -395,7 +411,7 @@ function productCard(p){
   return `
   <div class="product-card">
     <span class="product-tag">${p.type}</span>
-    ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
+    ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ 動画</span>' : ''}</div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
     <h3>${p.name}</h3>
     <div class="product-origin">${p.origin}</div>
     <p class="product-desc">${p.desc}</p>
@@ -453,6 +469,31 @@ catGrid.addEventListener('keydown', e => {
   const card = e.target.closest('.cat-card');
   if(card){ e.preventDefault(); goToCategory(card.dataset.cat); }
 });
+
+function openLightbox(p){
+  const media = document.getElementById('lightboxMedia');
+  media.innerHTML = p.video
+    ? `<video src="${p.video}" controls autoplay playsinline></video>`
+    : `<img src="${p.image}" alt="${p.name}">`;
+  document.getElementById('lightboxCaption').innerHTML = `<span>${p.name}</span><span class="lc-origin">${p.origin}</span>`;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightboxMedia').innerHTML = '';
+}
+grid.addEventListener('click', e => {
+  const photo = e.target.closest('.product-photo');
+  if(!photo) return;
+  const id = photo.closest('.product-card').querySelector('.add-btn').dataset.id;
+  const p = products.find(x => x.id === id);
+  if(p) openLightbox(p);
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if(e.target.id === 'lightbox') closeLightbox();
+});
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
 let cart = {};
 
