@@ -90,6 +90,13 @@
   .section-head .desc{max-width:340px;font-size:13.5px;line-height:1.8;opacity:0.65;font-family:'Noto Sans SC',sans-serif;}
   .products{background:var(--paper);padding:110px 0 120px;}
   .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(42,33,26,0.15);margin:0 6vw;border:1px solid rgba(42,33,26,0.15);}
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin:0 6vw 40px;}
+  .filter-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(42,33,26,0.25);color:var(--text-dark);padding:9px 18px;font-family:'Noto Sans SC',sans-serif;font-size:13px;letter-spacing:1.5px;cursor:pointer;transition:background .25s,color .25s,border-color .25s;}
+  .filter-btn span{font-size:11px;opacity:0.55;}
+  .filter-btn:hover{border-color:var(--jade);color:var(--jade);}
+  .filter-btn.active{background:var(--jade);border-color:var(--jade);color:var(--paper-light);}
+  .filter-btn.active span{opacity:0.8;}
+  .grid-empty{grid-column:1/-1;padding:70px 0;text-align:center;opacity:0.55;font-size:14px;background:var(--paper-light);}
   .product-card{background:var(--paper-light);padding:44px 32px 32px;display:flex;flex-direction:column;position:relative;transition:background .3s;}
   .product-card:hover{background:var(--paper);}
   .product-icon{width:100%;height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
@@ -120,7 +127,8 @@
 
   .categories{background:var(--paper-light);padding:110px 6vw 120px;}
   .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .cat-card{aspect-ratio:1/1.1;background:var(--paper);border:1px solid rgba(42,33,26,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:default;transition:background .3s,border-color .3s;}
+  .cat-card{aspect-ratio:1/1.1;background:var(--paper);border:1px solid rgba(42,33,26,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer;transition:background .3s,border-color .3s;}
+  .cat-card:focus-visible{outline:2px solid var(--cinnabar);outline-offset:2px;}
   .cat-card:hover{background:var(--jade);border-color:var(--jade);}
   .cat-card:hover .cat-name, .cat-card:hover .cat-en{color:var(--paper-light);}
   .cat-card:hover svg{stroke:var(--paper-light);}
@@ -248,6 +256,7 @@
     <h2>Featured Pieces</h2>
     <div class="desc">Fifteen signature works spanning jade bracelets, jade pendants, zisha teaware, ink painting and calligraphy — many shown in actual product photographs.</div>
   </div>
+  <div class="filter-bar" id="filterBar"></div>
   <div class="product-grid" id="productGrid"></div>
 </section>
 
@@ -357,7 +366,7 @@ const products = [
 ];
 
 const categories = [
-  {name:'Jade Bracelets',en:'JADE'},
+  {name:'Jade',en:'JADE'},
   {name:'Zisha Teaware',en:'ZISHA'},
   {name:'Ink Painting',en:'PAINTING'},
   {name:'Calligraphy',en:'CALLIGRAPHY'},
@@ -379,8 +388,16 @@ const catIcons = {
   CALLIGRAPHY:'<path d="M8 14 Q20 9 32 14 L29 36 Q20 40 11 36 Z" fill="none" stroke-width="1.4"/><line x1="20" y1="3" x2="20" y2="14" stroke-width="1.6"/>'
 };
 
+const typeToCat = {
+  'Jade Bracelet':'JADE', 'Jade Pendant':'JADE',
+  'Zisha Teaware':'ZISHA', 'Ink Painting':'PAINTING', 'Calligraphy':'CALLIGRAPHY'
+};
+const catCount = en => en === 'ALL' ? products.length : products.filter(p => typeToCat[p.type] === en).length;
+
 const grid = document.getElementById('productGrid');
-grid.innerHTML = products.map(p => `
+let activeFilter = 'ALL';
+function productCard(p){
+  return `
   <div class="product-card">
     <span class="product-tag">${p.type}</span>
     ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
@@ -393,17 +410,54 @@ grid.innerHTML = products.map(p => `
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </button>
     </div>
-  </div>
-`).join('');
+  </div>`;
+}
+function renderProducts(){
+  const list = activeFilter === 'ALL' ? products : products.filter(p => typeToCat[p.type] === activeFilter);
+  grid.innerHTML = list.length ? list.map(productCard).join('') : '<div class="grid-empty">No pieces in this category yet.</div>';
+}
+
+const filterBar = document.getElementById('filterBar');
+const filters = [{name:'All',en:'ALL'}, ...categories];
+function renderFilters(){
+  filterBar.innerHTML = filters.map(f =>
+    `<button class="filter-btn${f.en===activeFilter?' active':''}" data-cat="${f.en}">${f.name}<span>${catCount(f.en)}</span></button>`
+  ).join('');
+}
+function setFilter(en){
+  activeFilter = en;
+  renderFilters();
+  renderProducts();
+}
+filterBar.addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  setFilter(btn.dataset.cat);
+});
+renderFilters();
+renderProducts();
 
 const catGrid = document.getElementById('catGrid');
 catGrid.innerHTML = categories.map(c => `
-  <div class="cat-card">
+  <div class="cat-card" data-cat="${c.en}" role="button" tabindex="0" aria-label="View ${c.name}">
     <svg viewBox="0 0 40 40">${catIcons[c.en]}</svg>
     <div class="cat-name">${c.name}</div>
     <div class="cat-en">${c.en}</div>
   </div>
 `).join('');
+function goToCategory(en){
+  setFilter(en);
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+catGrid.addEventListener('click', e => {
+  const card = e.target.closest('.cat-card');
+  if(card) goToCategory(card.dataset.cat);
+});
+catGrid.addEventListener('keydown', e => {
+  if(e.key !== 'Enter' && e.key !== ' ') return;
+  const card = e.target.closest('.cat-card');
+  if(card){ e.preventDefault(); goToCategory(card.dataset.cat); }
+});
 
 let cart = {};
 
