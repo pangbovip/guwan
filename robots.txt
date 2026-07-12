@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pangbovip.github.io/guwan/sitemap.xml
