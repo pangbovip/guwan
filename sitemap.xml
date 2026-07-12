@@ -12,4 +12,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://wenguhall.com/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://wenguhall.com/ja.html"/>
   </url>
+  <url>
+    <loc>https://wenguhall.com/policies.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wenguhall.com/policies.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wenguhall.com/policies-ja.html"/>
+  </url>
+  <url>
+    <loc>https://wenguhall.com/policies-ja.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wenguhall.com/policies.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wenguhall.com/policies-ja.html"/>
+  </url>
 </urlset>
