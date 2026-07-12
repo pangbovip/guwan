@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pangbovip.github.io/guwan/sitemap.xml
+Sitemap: https://wenguhall.com/sitemap.xml
