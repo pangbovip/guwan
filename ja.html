@@ -108,6 +108,7 @@
   .product-card h3{font-size:19px;font-weight:700;margin-bottom:6px;}
   .product-origin{font-size:11.5px;color:var(--cinnabar);letter-spacing:1px;margin-bottom:16px;}
   .product-desc{font-size:13px;line-height:2;opacity:0.7;margin-bottom:28px;flex-grow:1;}
+  .product-specs{font-size:11px;letter-spacing:0.5px;opacity:0.55;margin-bottom:14px;}
   .product-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(42,33,26,0.15);padding-top:20px;}
   .product-price{font-family:'Noto Serif JP',serif;font-size:19px;font-weight:700;color:var(--text-dark);}
   .product-price span{font-size:11px;font-weight:400;opacity:0.6;margin-left:2px;}
@@ -388,38 +389,38 @@
 
 <script>
 const products = [
-  {id:'baiyu', sku:'J01', video:'videos/J01.mp4', name:'天然白玉ブレスレット', origin:'新疆・和田', type:'翡翠ブレスレット', price:323000, desc:'羊脂玉のような白翡翠の丸玉。きめ細やかで温かみのある質感、透明感のある色合いで、普段使いにも上品な一本です。', image:'images/J01.jpg'},
-  {id:'hupo', sku:'J02', name:'天然琥珀ブレスレット', origin:'ロシア・バルト海沿岸', type:'翡翠ブレスレット', price:485000, video:'videos/J02.mp4', desc:'年代を経た蜜蝋琥珀のバレルビーズ。濃密な蜂蜜色と一つひとつ異なる天然の紋様が魅力。使い込むほどに艶を増します。', image:'images/J02.jpg'},
-  {id:'guanyin', sku:'J03', name:'灰翡翠観音頭像ペンダント', origin:'和田玉 · 手彫り', type:'翡翠ペンダント', price:226000, desc:'一塊の玉から観音の頭部像を手彫り。きめ細やかな質感と自然な経年変化が魅力。', image:'images/J03.jpg'},
+  {id:'baiyu', sku:'J01', specs:'珠径 約14mm', video:'videos/J01.mp4', name:'天然白玉ブレスレット', origin:'新疆・和田', type:'翡翠ブレスレット', price:323000, desc:'羊脂玉のような白翡翠の丸玉。きめ細やかで温かみのある質感、透明感のある色合いで、普段使いにも上品な一本です。', image:'images/J01.jpg'},
+  {id:'hupo', sku:'J02', specs:'珠 23×16mm・29g', name:'天然琥珀ブレスレット', origin:'ロシア・バルト海沿岸', type:'翡翠ブレスレット', price:485000, video:'videos/J02.mp4', desc:'年代を経た蜜蝋琥珀のバレルビーズ。濃密な蜂蜜色と一つひとつ異なる天然の紋様が魅力。使い込むほどに艶を増します。', image:'images/J02.jpg'},
+  {id:'guanyin', sku:'J03', specs:'35×16×19mm・15g', name:'灰翡翠観音頭像ペンダント', origin:'和田玉 · 手彫り', type:'翡翠ペンダント', price:226000, desc:'一塊の玉から観音の頭部像を手彫り。きめ細やかな質感と自然な経年変化が魅力。', image:'images/J03.jpg'},
   {id:'greenguanyin', sku:'J04', name:'碧玉観音牌ペンダント', origin:'和田碧玉 · 手彫り', type:'翡翠ペンダント', price:485000, desc:'ほうれん草色の濃い碧玉に観音立像を浮き彫り。色合いが均一で発色が良く、黒檀ビーズを合わせています。', image:'images/J04.jpg'},
-  {id:'ovalguanyin', sku:'J05', video:'videos/J05.mp4', name:'白玉楕円観音ペンダント', origin:'和田玉 · 手彫り', type:'翡翠ペンダント', price:566000, desc:'楕円形に観音立像を陰刻。温かみのある質感と天然の飴色を残し、黒紐と金糸で仕上げています。', image:'images/J05.jpg'},
+  {id:'ovalguanyin', sku:'J05', specs:'84×25×13mm・48g', video:'videos/J05.mp4', name:'白玉楕円観音ペンダント', origin:'和田玉 · 手彫り', type:'翡翠ペンダント', price:566000, desc:'楕円形に観音立像を陰刻。温かみのある質感と天然の飴色を残し、黒紐と金糸で仕上げています。', image:'images/J05.jpg'},
   {id:'darkbuddha', sku:'J06', name:'墨玉浮彫仏像ペンダント', origin:'墨玉 · 手彫り', type:'翡翠ペンダント', price:226000, desc:'漆黒に近い墨玉に釈迦如来坐像を浮き彫り。立体感のある彫りが特徴で、木製ビーズと紅めのうを合わせています。', image:'images/J06.jpg'},
-  {id:'woodbracelet', sku:'J07', name:'沈香古材ブレスレット', origin:'ベトナム産 沈香古材', type:'翡翠ブレスレット', price:38000, desc:'沈香古材のバレルビーズブレスレット。濃淡のある木目と艶やかな経年変化が魅力。使うほど香りが深まります。', image:'images/J07.jpg'},
+  {id:'woodbracelet', sku:'J07', specs:'珠 約13×14mm', name:'沈香古材ブレスレット', origin:'ベトナム産 沈香古材', type:'翡翠ブレスレット', price:38000, desc:'沈香古材のバレルビーズブレスレット。濃淡のある木目と艶やかな経年変化が魅力。使うほど香りが深まります。', image:'images/J07.jpg'},
   {id:'plaintag', sku:'J08', name:'素面玉牌ペンダント', origin:'和田玉', type:'翡翠ペンダント', price:291000, desc:'彫刻を施さない素面の玉牌。石そのものの透明感と温かみを生かしたシンプルな一品。', image:'images/J08.jpg'},
-  {id:'jadedisc', sku:'J09', name:'白玉平安扣ペンダント', origin:'和田玉', type:'翡翠ペンダント', price:243000, desc:'無地の丸形ペンダント。透明感のある白玉の艶やかな質感で、安寧と幸運を象徴するシンプルな一品。', image:'images/J09.jpg'},
-  {id:'pixiu', sku:'J10', video:'videos/J10.mp4', name:'琥珀貔貅ペンダント', origin:'ミャンマー産 天然血珀', type:'翡翠ペンダント', price:192000, desc:'一塊の天然琥珀から貔貅（ひきゅう）を手彫り。艶やかで透明感のある色合いを持ち、招福の象徴として親しまれています。', image:'images/J10.jpg'},
+  {id:'jadedisc', sku:'J09', specs:'直径51mm・厚さ10mm', name:'白玉平安扣ペンダント', origin:'和田玉', type:'翡翠ペンダント', price:243000, desc:'無地の丸形ペンダント。透明感のある白玉の艶やかな質感で、安寧と幸運を象徴するシンプルな一品。', image:'images/J09.jpg'},
+  {id:'pixiu', sku:'J10', specs:'77.5g', video:'videos/J10.mp4', name:'琥珀貔貅ペンダント', origin:'ミャンマー産 天然血珀', type:'翡翠ペンダント', price:192000, desc:'一塊の天然琥珀から貔貅（ひきゅう）を手彫り。艶やかで透明感のある色合いを持ち、招福の象徴として親しまれています。', image:'images/J10.jpg'},
   {id:'lvyu', sku:'J11', name:'天然グリーンジェイドブレスレット', origin:'ミャンマー産 キャッツアイ石', type:'翡翠ブレスレット', price:257000, desc:'深い緑色のキャッツアイビーズ。光の角度によって浮かび上がる猫目模様が美しく、上品な佇まいです。', image:'images/J11.jpg'},
   {id:'zisha', sku:'Z01', name:'梅花詩文 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:182000, desc:'原鉱紫泥に梅花の詩文を手彫り。丸みのある器形と切れの良い注ぎ口が特徴。', image:'images/Z01.jpg'},
   {id:'guohua', sku:'P01', name:'歳朝清供図', origin:'手描き 水墨淡彩', type:'水墨画', price:80000, desc:'奇石や文房具、枇杷などを描いた手描きの水墨淡彩画。右側に詩を添えた、正月の吉祥画題。宣紙に描かれています。', image:'images/P01.jpg'},
   {id:'shufa', sku:'C01', name:'「吉祥」行書掛軸', origin:'名家直筆', type:'書道', price:2516000, desc:'「吉祥」の二文字を行書で。力強く流れるような筆致に、落款印を添えて。', image:'images/C01.jpg'},
   {id:'screen', sku:'C02', name:'書道 四曲屏風', origin:'名家直筆 · 表装屏風', type:'書道', price:445000, desc:'楷書による四曲屏風。宣紙に表装し、紫檀の額装。古典法帖に基づく書で、応接間などの設えに。', image:'images/C02.jpg'},
-  {id:'blackbracelet', sku:'J12', video:'videos/J12.mp4', name:'墨玉樽形ビーズブレスレット', origin:'和田墨玉', type:'翡翠ブレスレット', price:113000, desc:'漆のような艶を放つ漆黒の樽形ビーズ。深い墨色が手元に静かな存在感を添えます。', image:'images/J12.jpg'},
+  {id:'blackbracelet', sku:'J12', specs:'珠 10.9×9.9mm×20粒・約46g', video:'videos/J12.mp4', name:'墨玉樽形ビーズブレスレット', origin:'和田墨玉', type:'翡翠ブレスレット', price:113000, desc:'漆のような艶を放つ漆黒の樽形ビーズ。深い墨色が手元に静かな存在感を添えます。', image:'images/J12.jpg'},
   {id:'qingyu', sku:'J13', video:'videos/J13.mp4', name:'青玉丸玉ブレスレット', origin:'和田青玉', type:'翡翠ブレスレット', price:241000, desc:'淡い青緑色の和田青玉を揃いの丸玉に仕立てた一連。きめ細かな磨きが上品な光沢を生みます。', image:'images/J13.jpg'},
   {id:'biyu', sku:'J14', name:'碧玉丸玉ブレスレット', origin:'和田碧玉', type:'翡翠ブレスレット', price:241000, desc:'濃く艶やかなほうれん草色の碧玉。大玉仕立てで手元に確かな存在感を与えます。', image:'images/J14.jpg'},
   {id:'whiteguanyin', sku:'J15', name:'白玉観音頭像ペンダント', origin:'和田白玉 · 手彫り', type:'翡翠ペンダント', price:207000, desc:'上質な白玉に観音像を精緻に彫り上げた一品。流麗な彫線と穏やかな面差しが魅力です。', image:'images/J15.jpg'},
   {id:'feicuiguanyin', sku:'J16', name:'翡翠観音ペンダント（数珠付き）', origin:'ミャンマー翡翠 · 手彫り', type:'翡翠ペンダント', price:484000, desc:'天然翡翠の緑と蜜色を活かした観音の浮彫。翡翠ビーズの数珠仕立てでそのまま着用できます。', image:'images/J16.jpg'},
   {id:'duotone', sku:'J17', name:'碧玉ブレスレット（白玉彫珠付き）', origin:'和田碧玉・白玉', type:'翡翠ブレスレット', price:121000, desc:'深緑の碧玉に、古紋様を手彫りした白玉の樽珠を一粒あしらった、対比の美しい一連。', image:'images/J17.jpg'},
-  {id:'lotusdisc', sku:'J18', video:'videos/J18.mp4', name:'青玉蓮紋平安扣ペンダント', origin:'和田青玉 · 手彫り', type:'翡翠ペンダント', price:48000, desc:'蓮弁文様を浮彫にした青玉の平安扣。紅玉髄の小珠を添えた黒紐仕立て。平安の象徴です。', image:'images/J18.jpg'},
+  {id:'lotusdisc', sku:'J18', specs:'直径40mm・厚さ10mm', video:'videos/J18.mp4', name:'青玉蓮紋平安扣ペンダント', origin:'和田青玉 · 手彫り', type:'翡翠ペンダント', price:48000, desc:'蓮弁文様を浮彫にした青玉の平安扣。紅玉髄の小珠を添えた黒紐仕立て。平安の象徴です。', image:'images/J18.jpg'},
   {id:'rockpot', sku:'Z02', name:'岩紋角形 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:48000, desc:'岩層を彫り込んだ角形の壺体に、蓋上の老人像が趣を添える彫塑的な一品。', image:'images/Z02.jpg'},
   {id:'fishpot', sku:'Z03', name:'魚藻文様 紫砂急須（透かし蓋）', origin:'江蘇・宜興', type:'紫砂急須', price:435000, desc:'紅泥の壺体に魚と蓮の泥絵を描き、細かな浮彫文様と透かし彫りの蓋を合わせた華やかな急須。', image:'images/Z03.jpg'},
   {id:'darkpot', sku:'Z04', name:'泥絵花文 黒紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:48000, desc:'窯変で黒く焼き締めた壺体に、銀彩の花と蝶を泥絵で描いた、渋い輝きの一品。', image:'images/Z04.jpg'},
   {id:'lotuspot', sku:'Z05', name:'蓮葉形 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:26000, desc:'段泥で蓮の葉を写した仿生壺。葉脈の皺や茎のつまみまで細やかに造形されています。', image:'images/Z05.jpg'},
   {id:'ribbedpot', sku:'Z06', name:'菊弁形 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:112000, desc:'紅泥の菊弁形。整然と並ぶ筋文様が端正な、筋紋器の定番の形です。', image:'images/Z06.jpg'},
   {id:'seedjade', sku:'J19', name:'和田玉 籽料原石', origin:'新疆・和田', type:'翡翠原石', price:243000, desc:'川磨きの和田玉籽料。青白の玉肌を糖色の皮が包む、彫らずにそのまま愛でる天然の姿。', image:'images/J19.jpg'},
-  {id:'seatedguanyin', sku:'J20', name:'白玉観音座像ペンダント', origin:'和田白玉・手彫り', type:'翡翠ペンダント', price:307000, desc:'乳白の白玉に蓮上の観音座像を浮彫。柔らかく均一な艶、黒紐仕立てのペンダントです。', image:'images/J20.jpg'},
+  {id:'seatedguanyin', sku:'J20', specs:'65×32×16mm・50g', name:'白玉観音座像ペンダント', origin:'和田白玉・手彫り', type:'翡翠ペンダント', price:307000, desc:'乳白の白玉に蓮上の観音座像を浮彫。柔らかく均一な艶、黒紐仕立てのペンダントです。', image:'images/J20.jpg'},
   {id:'skinguanyin', sku:'J21', video:'videos/J21.mp4', name:'白玉籽料観音ペンダント（皮付き）', origin:'和田籽料・手彫り', type:'翡翠ペンダント', price:581000, desc:'天然の籽料に観音座像を彫り込んだ一品。乳白の玉肌に原石の糖色の皮を残し、木製ビーズの紐を合わせています。', image:'images/J21.jpg'},
   {id:'plainwhitetag', sku:'J22', name:'素面白玉牌ペンダント（無事牌）', origin:'和田白玉', type:'翡翠ペンダント', price:254000, desc:'彫刻を施さない白玉の無事牌。整った輪郭と柔らかな艶が魅力で、金具をあしらったグレーの組紐仕立てです。', image:'images/J22.jpg'},
-  {id:'beadnecklace', sku:'J23', video:'videos/J23.mp4', name:'白玉丸玉ネックレス（瓢箪付き）', origin:'和田白玉', type:'翡翠ネックレス', price:694000, desc:'粒の揃った白玉の連に、小さな瓢箪の彫り飾りを添えたネックレス。日常使いできる上品な艶やかさです。', image:'images/J23.jpg'},
+  {id:'beadnecklace', sku:'J23', specs:'珠 8mm・93g', video:'videos/J23.mp4', name:'白玉丸玉ネックレス（瓢箪付き）', origin:'和田白玉', type:'翡翠ネックレス', price:694000, desc:'粒の揃った白玉の連に、小さな瓢箪の彫り飾りを添えたネックレス。日常使いできる上品な艶やかさです。', image:'images/J23.jpg'},
   {id:'hexlion', sku:'Z07', name:'六方獅子鈕 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:243000, desc:'六方の壺体に彫画のパネルを施し、蓋上に獅子を頂く堂々たる一品。', image:'images/Z07.jpg'},
   {id:'pearpot', sku:'Z08', name:'梨形段泥 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:123000, desc:'斑点のある段泥で挽いた背の高い梨形。丸い蓋と蕾形のつまみが端正です。', image:'images/Z08.jpg'},
   {id:'blacklotus', sku:'Z09', name:'黒泥蓮花文 紫砂急須', origin:'江蘇・宜興', type:'紫砂急須', price:139000, desc:'漆黒の泥に流れるような蓮弁の浮彫を施し、蓮の実のつまみを頂きます。', image:'images/Z09.jpg'},
@@ -487,6 +488,7 @@ function productCard(p){
     <h3>${p.name}</h3>
     <div class="product-origin">${p.sku} · ${p.origin}</div>
     <p class="product-desc">${p.desc}</p>
+    ${p.specs ? `<div class="product-specs">${p.specs}</div>` : ''}
     <div class="product-foot">
       <div class="product-price">¥${p.price.toLocaleString()}<span>／点</span></div>
       <button class="add-btn" data-id="${p.id}" aria-label="宝物箱に追加">
