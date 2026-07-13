@@ -381,6 +381,7 @@
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
     <div class="cart-total"><span>Total</span><span id="cartTotal">$0</span></div>
+    <div id="paypalButtons" style="margin-bottom:10px;"></div>
     <button class="cart-checkout" id="checkoutWa">Order via WhatsApp →</button>
     <button class="cart-checkout cart-checkout-alt" id="checkoutMail">Order via Email →</button>
     <p class="checkout-note">We confirm availability within 24 hours and send you a secure payment link. No payment is taken on this site.</p>
@@ -672,6 +673,31 @@ function buildOrderText(){
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
   return `Hello Wen Gu Hall, I would like to order:\n${lines.join('\n')}\nTotal: $${total}\n\nMy shipping country: \nMy name: `;
 }
+// Paste the Live Client ID from developer.paypal.com to enable on-site payments
+const PAYPAL_CLIENT_ID = '';
+if (PAYPAL_CLIENT_ID) {
+  const s = document.createElement('script');
+  s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&currency=USD';
+  s.onload = () => {
+    paypal.Buttons({
+      style: {layout: 'horizontal', color: 'gold', height: 45, tagline: false},
+      createOrder: (data, actions) => {
+        const items = Object.values(cart);
+        if(items.length === 0){ showToast('Your treasure box is empty'); return Promise.reject(new Error('empty cart')); }
+        const total = items.reduce((s,i)=>s+i.price*i.qty,0);
+        const desc = items.map(i => i.sku + ' x' + i.qty).join(', ').slice(0, 120);
+        return actions.order.create({purchase_units: [{amount: {value: String(total), currency_code: 'USD'}, description: desc}]});
+      },
+      onApprove: (data, actions) => actions.order.capture().then(() => {
+        cart = {};
+        updateCartUI();
+        showToast('Payment received — thank you! We will contact you shortly.');
+      })
+    }).render('#paypalButtons');
+  };
+  document.head.appendChild(s);
+}
+
 document.getElementById('checkoutWa').addEventListener('click', () => {
   const text = buildOrderText();
   if(!text){ showToast('Your treasure box is empty'); return; }

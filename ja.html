@@ -368,6 +368,7 @@
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
     <div class="cart-total"><span>合計</span><span id="cartTotal">¥0</span></div>
+    <div id="paypalButtons" style="margin-bottom:10px;"></div>
     <button class="cart-checkout" id="checkoutWa">WhatsAppで注文 →</button>
     <button class="cart-checkout cart-checkout-alt" id="checkoutMail">メールで注文 →</button>
     <p class="checkout-note">在庫確認のうえ、24時間以内に安全なお支払いリンクをお送りします。当サイト上でお支払いが発生することはありません。</p>
@@ -659,6 +660,31 @@ function buildOrderText(){
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
   return `問古堂様\n以下の商品を注文したいです：\n${lines.join('\n')}\n合計：¥${total.toLocaleString()}\n\n配送先（国・地域）：\nお名前：`;
 }
+// developer.paypal.com の Live Client ID を貼り付けるとサイト内決済が有効になります
+const PAYPAL_CLIENT_ID = '';
+if (PAYPAL_CLIENT_ID) {
+  const s = document.createElement('script');
+  s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&currency=JPY';
+  s.onload = () => {
+    paypal.Buttons({
+      style: {layout: 'horizontal', color: 'gold', height: 45, tagline: false},
+      createOrder: (data, actions) => {
+        const items = Object.values(cart);
+        if(items.length === 0){ showToast('宝物箱は空です'); return Promise.reject(new Error('empty cart')); }
+        const total = items.reduce((s,i)=>s+i.price*i.qty,0);
+        const desc = items.map(i => i.sku + ' x' + i.qty).join(', ').slice(0, 120);
+        return actions.order.create({purchase_units: [{amount: {value: String(total), currency_code: 'JPY'}, description: desc}]});
+      },
+      onApprove: (data, actions) => actions.order.capture().then(() => {
+        cart = {};
+        updateCartUI();
+        showToast('お支払いを確認しました。ありがとうございます！');
+      })
+    }).render('#paypalButtons');
+  };
+  document.head.appendChild(s);
+}
+
 document.getElementById('checkoutWa').addEventListener('click', () => {
   const text = buildOrderText();
   if(!text){ showToast('宝物箱は空です'); return; }
