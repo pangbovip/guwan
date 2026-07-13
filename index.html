@@ -208,6 +208,15 @@
   .lightbox-caption .lc-origin{font-size:12px;color:var(--gold);letter-spacing:2px;}
   .lightbox-close{position:absolute;top:22px;right:28px;background:none;border:1px solid var(--gold);color:var(--paper);width:40px;height:40px;font-size:22px;line-height:1;cursor:pointer;transition:background .25s,color .25s;}
   .lightbox-close:hover{background:var(--gold);color:var(--ink);}
+  .trust-bar{background:var(--jade);color:var(--paper-light);display:flex;justify-content:center;flex-wrap:wrap;gap:10px 44px;padding:15px 6vw;font-size:12.5px;letter-spacing:1.5px;font-family:'Noto Sans SC',sans-serif;}
+  .card-badges{position:absolute;top:20px;left:20px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;z-index:2;}
+  .badge{font-size:10px;letter-spacing:1.5px;padding:3px 9px;font-family:'Noto Sans SC',sans-serif;}
+  .badge-new{background:var(--cinnabar);color:var(--paper);}
+  .badge-ooak{border:1px solid var(--gold);color:#8a6a3b;}
+  .badge-sold{background:var(--ink);color:var(--paper);}
+  .product-card.sold .product-photo img{filter:grayscale(85%);opacity:0.8;}
+  .product-card.sold .add-btn{opacity:0.25;pointer-events:none;}
+  .sort-select{margin-left:auto;background:transparent;border:1px solid rgba(42,33,26,0.25);color:var(--text-dark);padding:9px 12px;font-size:13px;cursor:pointer;font-family:'Noto Sans SC',sans-serif;}
   @media(max-width:900px){
     .intro{grid-template-columns:1fr;gap:30px;}
     .hero-inner{grid-template-columns:1fr;}
@@ -272,6 +281,13 @@
   <div class="scroll-hint"><div class="line"></div>Scroll to Explore</div>
 </section>
 
+<div class="trust-bar">
+  <span>✓ Free worldwide shipping</span>
+  <span>✓ Tracked &amp; fully insured</span>
+  <span>✓ 14-day returns</span>
+  <span>✓ Every piece individually authenticated</span>
+</div>
+
 <section class="intro">
   <div class="intro-label">About Wen Gu Hall</div>
   <div class="intro-text">
@@ -321,7 +337,7 @@
 </section>
 
 <section class="newsletter" id="newsletter">
-  <h2>Subscribe for new arrivals and collector's notes</h2>
+  <h2>Every piece is one of a kind — once it sells, it is gone. Be the first to see new arrivals.</h2>
   <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed — thank you');">
     <input type="email" placeholder="Enter your email" required>
     <button type="submit">Subscribe</button>
@@ -347,7 +363,7 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <ul><li>Mon–Sun 9:00–20:00 (GMT+8)</li><li><a href="mailto:86886779@qq.com">86886779@qq.com</a></li><li><a href="https://wa.me/8613910049069" target="_blank" rel="noopener">WhatsApp +86 139 1004 9069</a></li><li>No. 12, Dingshu Town, Yixing, Jiangsu, China</li></ul>
+      <ul><li>Mon–Sun 9:00–20:00 (GMT+8)</li><li><a href="mailto:86886779@qq.com">86886779@qq.com</a></li><li><a href="https://wa.me/8613910049069" target="_blank" rel="noopener">WhatsApp +86 139 1004 9069</a></li><li>Aerospace Building, 4019 Shennan Avenue, Futian District, Shenzhen, China</li></ul>
     </div>
   </div>
   <div class="footer-bottom">
@@ -462,6 +478,9 @@ const catIcons = {
   CURIO:'<circle cx="20" cy="26" r="8.5" fill="none" stroke-width="1.6"/><circle cx="20" cy="12" r="5.5" fill="none" stroke-width="1.6"/><path d="M17 5 Q20 3 23 5" fill="none" stroke-width="1.4"/>'
 };
 
+const NEW_SKUS = ['Z07','Z08','Z09','Z10','Z11','Z12','Z13','Z14','Z15','Z16','Z17','Z18','Z19','Z20','T01','T02','W01'];
+products.forEach(p => { p.isNew = NEW_SKUS.includes(p.sku); });
+
 const typeToCat = {
   'Jade Bracelet':'JADE', 'Jade Pendant':'JADE', 'Raw Jade':'JADE', 'Jade Necklace':'JADE',
   'Zisha Teaware':'ZISHA', 'Porcelain':'PORCELAIN', 'Carved Gourd':'CURIO', 'Ink Painting':'PAINTING', 'Calligraphy':'CALLIGRAPHY'
@@ -470,10 +489,12 @@ const catCount = en => en === 'ALL' ? products.length : products.filter(p => typ
 
 const grid = document.getElementById('productGrid');
 let activeFilter = 'ALL';
+let sortMode = 'featured';
 function productCard(p){
   return `
-  <div class="product-card">
+  <div class="product-card${p.sold ? ' sold' : ''}">
     <span class="product-tag">${p.type}</span>
+    <div class="card-badges">${p.sold ? '<span class="badge badge-sold">SOLD</span>' : ''}${!p.sold && p.isNew ? '<span class="badge badge-new">NEW</span>' : ''}${!p.sold ? '<span class="badge badge-ooak">ONE OF A KIND</span>' : ''}</div>
     ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ Video</span>' : ''}</div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
     <h3>${p.name}</h3>
     <div class="product-origin">${p.sku} · ${p.origin}</div>
@@ -487,7 +508,9 @@ function productCard(p){
   </div>`;
 }
 function renderProducts(){
-  const list = activeFilter === 'ALL' ? products : products.filter(p => typeToCat[p.type] === activeFilter);
+  let list = activeFilter === 'ALL' ? [...products] : products.filter(p => typeToCat[p.type] === activeFilter);
+  if(sortMode === 'asc') list = [...list].sort((a,b) => a.price - b.price);
+  else if(sortMode === 'desc') list = [...list].sort((a,b) => b.price - a.price);
   grid.innerHTML = list.length ? list.map(productCard).join('') : '<div class="grid-empty">No pieces in this category yet.</div>';
 }
 
@@ -496,7 +519,11 @@ const filters = [{name:'All',en:'ALL'}, ...categories];
 function renderFilters(){
   filterBar.innerHTML = filters.map(f =>
     `<button class="filter-btn${f.en===activeFilter?' active':''}" data-cat="${f.en}">${f.name}<span>${catCount(f.en)}</span></button>`
-  ).join('');
+  ).join('') + `<select class="sort-select" id="sortSel" aria-label="Sort products">
+    <option value="featured"${sortMode==='featured'?' selected':''}>Sort: Featured</option>
+    <option value="asc"${sortMode==='asc'?' selected':''}>Price: Low to High</option>
+    <option value="desc"${sortMode==='desc'?' selected':''}>Price: High to Low</option>
+  </select>`;
 }
 function setFilter(en){
   activeFilter = en;
@@ -507,6 +534,9 @@ filterBar.addEventListener('click', e => {
   const btn = e.target.closest('.filter-btn');
   if(!btn) return;
   setFilter(btn.dataset.cat);
+});
+filterBar.addEventListener('change', e => {
+  if(e.target.id === 'sortSel'){ sortMode = e.target.value; renderProducts(); }
 });
 renderFilters();
 renderProducts();
@@ -607,6 +637,8 @@ document.getElementById('productGrid').addEventListener('click', e => {
   const btn = e.target.closest('.add-btn');
   if(!btn) return;
   const p = products.find(x => x.id === btn.dataset.id);
+  if(!p) return;
+  if(p.sold){ showToast('This piece has found its home'); return; }
   if(cart[p.id]) cart[p.id].qty++;
   else cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
   updateCartUI();
