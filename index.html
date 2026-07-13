@@ -673,7 +673,7 @@ function buildOrderText(){
   if(items.length === 0) return null;
   const lines = items.map(i => `- ${i.sku || ''} ${i.name} x${i.qty} — $${i.price * i.qty}`);
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
-  return `Hello Wen Gu Hall, I would like to order:\n${lines.join('\n')}\nTotal: $${total}\n\nMy shipping country: \nMy name: `;
+  return `Hello Wen Gu Hall, I would like to order:\n${lines.join('\n')}\nTotal: $${total}\n\n--- Shipping details ---\nFull name: \nFull address: \nCity: \nState/Province: \nZIP/Postal code: \nCountry: \nPhone: `;
 }
 // Paste the Live Client ID from developer.paypal.com to enable on-site payments
 const PAYPAL_CLIENT_ID = 'AZAUdHJ_fPObN-WAMZWZNRT5F2DBm262FCzEXr95R71042sUsGrIqtQUp8oclUDGJJ4-KjBLeuA08Gvw';
