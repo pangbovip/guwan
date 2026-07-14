@@ -206,6 +206,11 @@
   .lightbox.open{opacity:1;pointer-events:auto;}
   .lightbox-media{max-width:min(920px,92vw);max-height:78vh;display:flex;align-items:center;justify-content:center;}
   .lightbox-media img,.lightbox-media video{max-width:100%;max-height:78vh;display:block;border:1px solid rgba(176,141,87,0.4);background:#000;}
+  .lightbox-thumbs{display:none;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .lightbox-thumb{width:60px;height:60px;padding:0;border:1px solid rgba(176,141,87,0.4);background:#000;cursor:pointer;position:relative;overflow:hidden;}
+  .lightbox-thumb img{width:100%;height:100%;object-fit:cover;}
+  .lightbox-thumb.active{border-color:var(--gold);border-width:2px;}
+  .lightbox-thumb .lt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;background:rgba(0,0,0,0.35);}
   .lightbox-caption{color:var(--paper);font-size:14px;letter-spacing:1px;display:flex;align-items:baseline;gap:14px;}
   .lightbox-caption .lc-origin{font-size:12px;color:var(--gold);letter-spacing:2px;}
   .lightbox-close{position:absolute;top:22px;right:28px;background:none;border:1px solid var(--gold);color:var(--paper);width:40px;height:40px;font-size:22px;line-height:1;cursor:pointer;transition:background .25s,color .25s;}
@@ -393,6 +398,7 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
   <div class="lightbox-media" id="lightboxMedia"></div>
+  <div class="lightbox-thumbs" id="lightboxThumbs"></div>
   <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
@@ -443,7 +449,7 @@ const products = [
   {id:'giltchrys', sku:'Z13', name:'Gilt Chrysanthemum Zisha Teapot', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:655, desc:'Warm red clay scattered with gilt chrysanthemum sprays — quiet opulence in a classic round form.', image:'images/Z13.jpg'},
   {id:'plumpot', sku:'Z14', name:'Plum Blossom Zisha Teapot with Inscription', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:998, desc:'A rounded purple clay body carved with plum branches on one side and calligraphy on the other.', image:'images/Z14.jpg'},
   {id:'shipiaopoem', sku:'Z15', name:'Shipiao Zisha Teapot with Engraved Verse', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:758, desc:'The classic shipiao profile in warm brown clay, engraved around the body with running-script poetry.', image:'images/Z15.jpg'},
-  {id:'dragonpot', sku:'Z16', specs:'Capacity 240 cc', name:'Gongchun-Style Zisha Teapot with Dragon Relief', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:269, desc:'A gnarled, rock-like gongchun body carved with a coiling dragon and an auspicious cloud.', image:'images/Z16.jpg'},
+  {id:'dragonpot', sku:'Z16', gallery:['images/Z16-real.jpg'], specs:'Capacity 240 cc', name:'Gongchun-Style Zisha Teapot with Dragon Relief', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:269, desc:'A gnarled, rock-like gongchun body carved with a coiling dragon and an auspicious cloud.', image:'images/Z16.jpg'},
   {id:'carvedcalli', sku:'Z17', name:'Zisha Teapot with Bold Carved Calligraphy', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:239, desc:'Kiln-toned clay carved boldly on both faces with large-character calligraphy and verse.', image:'images/Z17.jpg'},
   {id:'melonpot', sku:'Z18', specs:'Capacity 270 cc', name:'Lobed Melon Zisha Teapot', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:899, desc:'Softly swelling melon lobes in glossy dark clay, echoed through the lid and bud finial.', image:'images/Z18.jpg'},
   {id:'darkribbed', sku:'Z19', name:'Dark Petal-Ribbed Zisha Teapot', origin:'Yixing, Jiangsu', type:'Zisha Teaware', price:668, desc:'Crisp chrysanthemum ribs radiate over a deep umber body, carried through lid and finial.', image:'images/Z19.jpg'},
@@ -566,14 +572,32 @@ catGrid.addEventListener('keydown', e => {
   if(card){ e.preventDefault(); goToCategory(card.dataset.cat); }
 });
 
+let lbItems = [];
+function lbRenderMain(i){
+  const it = lbItems[i]; if(!it) return;
+  document.getElementById('lightboxMedia').innerHTML = it.type === 'video'
+    ? `<video src="${it.src}" controls autoplay playsinline></video>`
+    : `<img src="${it.src}" alt="">`;
+  document.querySelectorAll('.lightbox-thumb').forEach((t, idx) => t.classList.toggle('active', idx === i));
+}
 function openLightbox(p){
-  const media = document.getElementById('lightboxMedia');
-  media.innerHTML = p.video
-    ? `<video src="${p.video}" controls autoplay playsinline></video>`
-    : `<img src="${p.image}" alt="${p.name}">`;
+  lbItems = [];
+  if(p.video) lbItems.push({type:'video', src:p.video, thumb:p.image});
+  if(p.image) lbItems.push({type:'img', src:p.image, thumb:p.image});
+  (p.gallery || []).forEach(g => lbItems.push({type:'img', src:g, thumb:g}));
+  const thumbs = document.getElementById('lightboxThumbs');
+  if(lbItems.length > 1){
+    thumbs.innerHTML = lbItems.map((it, i) => `<button class="lightbox-thumb" data-i="${i}"><img src="${it.thumb}" alt="">${it.type==='video' ? '<span class="lt-play">▶</span>' : ''}</button>`).join('');
+    thumbs.style.display = 'flex';
+  } else { thumbs.innerHTML = ''; thumbs.style.display = 'none'; }
+  lbRenderMain(0);
   document.getElementById('lightboxCaption').innerHTML = `<span>${p.name}</span><span class="lc-origin">${p.sku} · ${p.origin}</span>`;
   document.getElementById('lightbox').classList.add('open');
 }
+document.getElementById('lightboxThumbs').addEventListener('click', e => {
+  const b = e.target.closest('.lightbox-thumb');
+  if(b) lbRenderMain(+b.dataset.i);
+});
 function closeLightbox(){
   document.getElementById('lightbox').classList.remove('open');
   document.getElementById('lightboxMedia').innerHTML = '';
