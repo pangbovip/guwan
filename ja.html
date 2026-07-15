@@ -119,6 +119,7 @@
 
   .story{background:var(--ink);color:var(--text-on-ink);padding:130px 6vw;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
   .story-visual{position:relative;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;}
+  .story-visual img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid rgba(176,141,87,0.45);box-shadow:0 24px 60px rgba(0,0,0,0.45);}
   .story-text .intro-label{color:var(--gold);}
   .story-text .intro-label::before{background:var(--gold);}
   .story-text h2{font-size:clamp(24px,2.8vw,34px);line-height:1.7;margin:24px 0 30px;font-weight:600;}
@@ -299,14 +300,7 @@
 
 <section class="story" id="story">
   <div class="story-visual">
-    <svg viewBox="0 0 300 340" width="80%">
-      <ellipse cx="150" cy="300" rx="120" ry="18" fill="#B08D57" opacity="0.15"/>
-      <circle cx="150" cy="150" r="90" fill="none" stroke="#B08D57" stroke-width="1.5" opacity="0.8"/>
-      <circle cx="150" cy="150" r="60" fill="none" stroke="#B08D57" stroke-width="1" opacity="0.5"/>
-      <path d="M90 150 Q150 100 210 150 Q150 200 90 150 Z" fill="none" stroke="#9E2B25" stroke-width="1.2" opacity="0.7"/>
-      <circle cx="150" cy="300" r="4" fill="#9E2B25"/>
-      <line x1="150" y1="240" x2="150" y2="290" stroke="#B08D57" stroke-width="1" opacity="0.5"/>
-    </svg>
+    <img src="images/storefront.jpg" alt="問古堂の店構え — 金字の扁額と赤提灯、骨董品の並ぶ店内" loading="lazy">
   </div>
   <div class="story-text">
     <div class="intro-label">堂号ストーリー</div>
