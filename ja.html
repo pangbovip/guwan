@@ -580,7 +580,7 @@ function lbRenderMain(i){
 function openLightbox(p){
   lbItems = [];
   if(p.video) lbItems.push({type:'video', src:p.video, thumb:p.image});
-  if(p.image) lbItems.push({type:'img', src:p.image, thumb:p.image});
+  if(p.image && !(p.video && p.gallery)) lbItems.push({type:'img', src:p.image, thumb:p.image});
   (p.gallery || []).forEach(g => lbItems.push({type:'img', src:g, thumb:g}));
   const thumbs = document.getElementById('lightboxThumbs');
   if(lbItems.length > 1){
@@ -617,8 +617,7 @@ try {
   const saved = JSON.parse(localStorage.getItem('wgh-cart') || '{}');
   for (const id in saved) {
     const p = products.find(x => x.id === id);
-    const qty = Math.max(1, parseInt(saved[id], 10) || 1);
-    if (p) cart[id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty};
+    if (p) cart[id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
   }
 } catch(e) { cart = {}; }
 function saveCart(){
@@ -644,9 +643,8 @@ function updateCartUI(){
           <div class="ci-origin">${i.sku} · ${i.origin}</div>
         </div>
         <div class="ci-qty">
-          <button data-act="dec" data-id="${i.id}">−</button>
-          <span>${i.qty}</span>
-          <button data-act="inc" data-id="${i.id}">+</button>
+          <span>×1</span>
+          <button data-act="remove" data-id="${i.id}" title="削除">✕</button>
         </div>
         <div class="ci-price">¥${(i.price * i.qty).toLocaleString()}</div>
       </div>
@@ -663,8 +661,8 @@ document.getElementById('productGrid').addEventListener('click', e => {
   const p = products.find(x => x.id === btn.dataset.id);
   if(!p) return;
   if(p.sold){ showToast('この作品はご縁がありました'); return; }
-  if(cart[p.id]) cart[p.id].qty++;
-  else cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
+  if(cart[p.id]){ showToast('一点物のため、お一人様1点限りです'); return; }
+  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
   updateCartUI();
   showToast(`「${p.name}」を宝物箱に追加しました`);
 });
@@ -672,12 +670,7 @@ document.getElementById('productGrid').addEventListener('click', e => {
 document.getElementById('cartItems').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]');
   if(!btn) return;
-  const id = btn.dataset.id;
-  if(btn.dataset.act === 'inc') cart[id].qty++;
-  else {
-    cart[id].qty--;
-    if(cart[id].qty <= 0) delete cart[id];
-  }
+  delete cart[btn.dataset.id];
   updateCartUI();
 });
 
