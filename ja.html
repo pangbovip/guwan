@@ -770,6 +770,20 @@ const ldTag = document.createElement('script');
 ldTag.type = 'application/ld+json';
 ldTag.textContent = JSON.stringify(ld);
 document.head.appendChild(ldTag);
+
+// Deep link: ?p=SKU scrolls to the product card and opens its gallery
+(function(){
+  const q = new URLSearchParams(location.search).get('p');
+  if(!q) return;
+  const key = q.toLowerCase();
+  const p = products.find(x => x.sku.toLowerCase() === key || x.id === key);
+  if(!p) return;
+  setTimeout(() => {
+    const btn = document.querySelector(`.add-btn[data-id='${p.id}']`);
+    if(btn) btn.closest('.product-card').scrollIntoView({behavior:'smooth', block:'center'});
+    openLightbox(p);
+  }, 500);
+})();
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c97ee3e3bfcf4fbcba47268174152587"}'></script>
 </body>
