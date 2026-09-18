@@ -9,6 +9,7 @@ on:
       - "policies.html"
       - "policies-ja.html"
       - "sitemap.xml"
+      - "p/**"
       - "assets/**"
   workflow_dispatch:
 
@@ -16,22 +17,48 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed pages
+        id: urls
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual run: send every page in the sitemap.
+            grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's|</\?loc>||g' > urls.txt
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
+              | grep -E '^(index|ja|policies|policies-ja)\.html$|^p/.*\.html$' \
+              | sed -e 's|^index\.html$|/|' \
+                    -e 's|^p/index\.html$|/p/|' \
+                    -e 's|^\(.*\)$|/\1|' \
+                    -e 's|^//|/|' \
+              | sed 's|^|https://wenguhall.com|' \
+              | sed 's|https://wenguhall.com/$|https://wenguhall.com/|' \
+              | sort -u > urls.txt || true
+          fi
+          # IndexNow accepts at most 10000 URLs per request.
+          head -n 10000 urls.txt > urls.capped.txt && mv urls.capped.txt urls.txt
+          echo "count=$(wc -l < urls.txt)" >> "$GITHUB_OUTPUT"
+          cat urls.txt
+
       - name: Wait for GitHub Pages to publish
+        if: steps.urls.outputs.count != '0'
         run: sleep 90
 
       - name: Notify IndexNow
+        if: steps.urls.outputs.count != '0'
         run: |
+          set -euo pipefail
+          LIST=$(awk 'BEGIN{ORS=""} {if(NR>1) printf ","; printf "\"%s\"", $0}' urls.txt)
           curl -sS -X POST "https://api.indexnow.org/IndexNow" \
             -H "Content-Type: application/json; charset=utf-8" \
             -w "\nHTTP %{http_code}\n" \
-            -d '{
-              "host": "wenguhall.com",
-              "key": "0ea057bd239466dbbabbc3059ad0d68a",
-              "keyLocation": "https://wenguhall.com/indexnow-0ea057bd239466dbbabbc3059ad0d68a.txt",
-              "urlList": [
-                "https://wenguhall.com/",
-                "https://wenguhall.com/ja.html",
-                "https://wenguhall.com/policies.html",
-                "https://wenguhall.com/policies-ja.html"
-              ]
-            }'
+            -d "{
+              \"host\": \"wenguhall.com\",
+              \"key\": \"0ea057bd239466dbbabbc3059ad0d68a\",
+              \"keyLocation\": \"https://wenguhall.com/indexnow-0ea057bd239466dbbabbc3059ad0d68a.txt\",
+              \"urlList\": [${LIST}]
+            }"
