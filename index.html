@@ -788,7 +788,7 @@ const ld = {
           "sku": p.sku,
           "description": p.desc,
           "image": "https://wenguhall.com/" + p.image,
-          "offers": {"@type": "Offer", "price": String(p.price), "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://wenguhall.com/#products"}
+          "offers": {"@type": "Offer", "price": String(p.price), "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://wenguhall.com/p/" + p.sku + ".html"}
         }
       }))
     }
