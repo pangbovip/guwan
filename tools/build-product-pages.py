@@ -141,7 +141,12 @@ $gallery
     <a class="btn btn-primary" href="../?p=$sku">Add to treasure box &rarr;</a>
     <a class="btn btn-alt" href="$wa" target="_blank" rel="noopener">Ask on WhatsApp</a>
     <a class="btn btn-alt" href="$mail">Ask by email</a>
-    <p class="note">Every piece is hand-picked and traceable to its origin. Questions about size, weight or condition are welcome before you buy &mdash; we answer within a day.</p>
+    <section class="spec" aria-label="Documentation before purchase">
+      <h2>Before you purchase</h2>
+      <p>Please quote SKU $sku when requesting close-up photographs, dimensions, weight, condition details, and any available maker or provenance records.</p>
+      <p>Ask whether this specific piece has a laboratory report or other supporting documentation. A catalogue description is not an independent authentication certificate; material, age and maker claims should be assessed against the available evidence.</p>
+      <p><a href="../policies.html">Review shipping and return terms</a> and confirm the details of this piece before payment.</p>
+    </section>
   </div>
 </div>
 <footer>
