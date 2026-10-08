@@ -20,7 +20,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="description" content="問古堂は、産地までたどれる中国の文人趣味の骨董・工芸品を厳選。和田玉のブレスレットやペンダント、宜興の紫砂茶壺、水墨画や書をお届けします。一点一点、鑑定と真心を込めた逸品を、目の肥えたコレクターへ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"></noscript>
 <style>
   :root{
     --ink:#1A1714;
@@ -147,6 +150,11 @@
   .newsletter-form input:focus{outline:none;border-color:var(--paper-light);}
   .newsletter-form button{background:var(--ink);color:var(--paper-light);border:1px solid var(--ink);padding:14px 26px;font-size:13.5px;letter-spacing:1px;cursor:pointer;transition:background .25s;}
   .newsletter-form button:hover{background:var(--ink-soft);}
+  .newsletter-cta a{display:inline-flex;align-items:center;padding:14px 26px;font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:background .25s,border-color .25s;}
+  .newsletter-cta .cta-line{border:1px solid rgba(232,220,196,0.5);border-right:none;color:var(--paper-light);}
+  .newsletter-cta .cta-line:hover{border-color:var(--paper-light);}
+  .newsletter-cta .cta-fill{background:var(--ink);border:1px solid var(--ink);color:var(--paper-light);}
+  .newsletter-cta .cta-fill:hover{background:var(--ink-soft);}
 
   footer{background:var(--ink);color:var(--text-on-ink);padding:70px 6vw 30px;}
   .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(176,141,87,0.2);}
@@ -292,7 +300,7 @@
 <section class="products" id="products">
   <div class="section-head">
     <h2>厳選逸品</h2>
-    <div class="desc">翡翠、紫砂急須、磁器、水墨画、書道、文玩――六つの分野を代表する四十八点。</div>
+    <div class="desc">翡翠、紫砂急須、磁器、水墨画、書道、文玩――六つの分野を代表する<span data-piece-count>73</span>点。</div>
   </div>
   <div class="filter-bar" id="filterBar"></div>
   <div class="product-grid" id="productGrid"></div>
@@ -324,11 +332,11 @@
 </section>
 
 <section class="newsletter" id="newsletter">
-  <h2>すべて一点物——売れたら二度と出会えません。新着を最初にご覧ください。</h2>
-  <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('登録が完了しました');">
-    <input type="email" placeholder="メールアドレスを入力" required>
-    <button type="submit">登録する</button>
-  </form>
+  <h2>すべて一点物——売れたら二度と出会えません。新着のご案内は、お気軽にご連絡ください。</h2>
+  <div class="newsletter-form newsletter-cta">
+    <a class="cta-line" href="https://wa.me/8613910049069?text=%E5%95%8F%E5%8F%A4%E5%A0%82%E6%A7%98%E3%80%81%E6%96%B0%E7%9D%80%E5%95%86%E5%93%81%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="noopener">WhatsAppで連絡</a>
+    <a class="cta-fill" href="mailto:86886779@qq.com?subject=%E6%96%B0%E7%9D%80%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85%EF%BC%88%E5%95%8F%E5%8F%A4%E5%A0%82%EF%BC%89">メールで連絡</a>
+  </div>
 </section>
 
 <footer>
@@ -463,6 +471,7 @@ const products = [
   {id:'rockbowl', sku:'T07', gallery:['images/T07-real.jpg'], name:'岩肌文 斑釉茶碗', origin:'手作り工房陶磁', type:'磁器', price:27000, desc:'風化した岩を思わせる凹凸の器肌に、粟粒の斑釉。見込みは静かに滑らかに仕上げた茶碗。', image:'images/T07.jpg'},
   {id:'gourdcarv', sku:'W01', name:'刻絵ひょうたん（観音・経文）', origin:'天然ひょうたん・手彫り', type:'刻絵ひょうたん', price:138000, desc:'天然のひょうたんの両面に観音像と経文を施した、文人の掌中の珍品。', image:'images/W01.jpg'},
 ];
+document.querySelectorAll('[data-piece-count]').forEach(el => { el.textContent = products.length; });
 
 const categories = [
   {name:'翡翠',en:'JADE'},
@@ -684,7 +693,7 @@ document.getElementById('cartItems').addEventListener('click', e => {
 
 const drawer = document.getElementById('cartDrawer');
 const overlay = document.getElementById('cartOverlay');
-function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); }
+function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); loadPayPal(); }
 function closeCart(){ drawer.classList.remove('open'); overlay.classList.remove('open'); }
 document.getElementById('cartOpenBtn').addEventListener('click', openCart);
 document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
@@ -699,7 +708,11 @@ function buildOrderText(){
 }
 // developer.paypal.com の Live Client ID を貼り付けるとサイト内決済が有効になります
 const PAYPAL_CLIENT_ID = 'AZAUdHJ_fPObN-WAMZWZNRT5F2DBm262FCzEXr95R71042sUsGrIqtQUp8oclUDGJJ4-KjBLeuA08Gvw';
-if (PAYPAL_CLIENT_ID) {
+// Load the PayPal SDK only when the treasure box is first opened (keeps it off the initial page load).
+let paypalRequested = false;
+function loadPayPal(){
+  if (!PAYPAL_CLIENT_ID || paypalRequested) return;
+  paypalRequested = true;
   const s = document.createElement('script');
   s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&currency=JPY';
   s.onload = () => {
@@ -719,6 +732,7 @@ if (PAYPAL_CLIENT_ID) {
       })
     }).render('#paypalButtons');
   };
+  s.onerror = () => { paypalRequested = false; s.remove(); };
   document.head.appendChild(s);
 }
 
