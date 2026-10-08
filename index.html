@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <meta name="p:domain_verify" content="cc67ecd98a5428728e7bfcbcec2fa01c"/>
-<meta name="description" content="Wen Gu Hall (问古堂) curates authenticated Chinese literati antiques and fine crafts — Hetian jade bracelets and pendants, Yixing zisha teapots, ink-wash paintings and calligraphy. Every piece is traceable to its origin and hand-picked for discerning collectors.">
+<meta name="description" content="Wen Gu Hall (问古堂) curates Chinese literati antiques and fine crafts — Hetian jade bracelets and pendants, Yixing zisha teapots, ink paintings and calligraphy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
@@ -210,6 +210,14 @@
   .toast .toast-seal{width:20px;height:20px;flex-shrink:0;}
 
   .product-photo{cursor:zoom-in;position:relative;}
+  a.product-photo{display:block;}
+  .product-card h3 a{color:inherit;text-decoration:none;}
+  .product-card h3 a:hover{color:var(--cinnabar);}
+  .cat-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin-top:28px;}
+  .cat-links a{border:1px solid rgba(42,33,26,0.25);padding:9px 16px;font-size:13.5px;text-decoration:none;color:var(--text-dark);transition:background .2s,color .2s;}
+  .cat-links a:hover{background:var(--jade);border-color:var(--jade);color:var(--paper-light);}
+  .cat-links a span{opacity:.55;margin-left:4px;font-size:12px;}
+  .cat-links-note{text-align:center;font-size:12px;opacity:.6;margin-top:12px;}
   .play-badge{position:absolute;right:10px;bottom:10px;background:rgba(26,23,20,0.75);color:var(--paper);border:1px solid var(--gold);font-size:11px;padding:4px 9px;letter-spacing:1px;pointer-events:none;}
   .lightbox{position:fixed;inset:0;background:rgba(26,23,20,0.9);z-index:400;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;opacity:0;pointer-events:none;transition:opacity .3s;padding:4vh 4vw;}
   .lightbox.open{opacity:1;pointer-events:auto;}
@@ -343,6 +351,7 @@
     <div class="desc">Jade, zisha, porcelain, ink painting, calligraphy, curios — six materials, six states of mind.</div>
   </div>
   <div class="cat-grid" id="catGrid"></div>
+  <nav class="cat-links" aria-label="Shop by category"><!--seo:catlinks--><a href="c/zisha-teapots.html">Yixing Zisha Teapots <span>28</span></a><a href="c/jade-pendants.html">Jade Pendants, Guanyin Amulets &amp; Jewelry <span>21</span></a><a href="c/jade-bracelets.html">Jade &amp; Natural Bead Bracelets <span>10</span></a><a href="c/porcelain-teacups.html">Porcelain Teacups &amp; Tea Bowls <span>9</span></a><a href="c/calligraphy-ink-painting.html">Chinese Calligraphy &amp; Ink Painting <span>3</span></a><a href="p/">All 73 pieces</a><!--/seo:catlinks--></nav>
 </section>
 
 <section class="newsletter" id="newsletter">
@@ -364,7 +373,7 @@
     </div>
     <div class="footer-col">
       <h4>Shop</h4>
-      <ul><li>Jade Bracelets</li><li>Buddhist Amulets</li><li>Zisha Teaware</li><li>Painting &amp; Calligraphy</li></ul>
+      <ul><!--seo:shoplinks--><li><a href="c/zisha-teapots.html">Yixing Zisha Teapots</a></li><li><a href="c/jade-pendants.html">Jade Pendants, Guanyin Amulets &amp; Jewelry</a></li><li><a href="c/jade-bracelets.html">Jade &amp; Natural Bead Bracelets</a></li><li><a href="c/porcelain-teacups.html">Porcelain Teacups &amp; Tea Bowls</a></li><li><a href="c/calligraphy-ink-painting.html">Chinese Calligraphy &amp; Ink Painting</a></li><!--/seo:shoplinks--></ul>
     </div>
     <div class="footer-col">
       <h4>Wen Gu Hall</h4>
@@ -531,8 +540,8 @@ function productCard(p){
   <div class="product-card${p.sold ? ' sold' : ''}">
     <span class="product-tag">${p.type}</span>
     <div class="card-badges">${p.sold ? '<span class="badge badge-sold">SOLD</span>' : ''}${!p.sold && p.isNew ? '<span class="badge badge-new">NEW</span>' : ''}${!p.sold ? '<span class="badge badge-ooak">ONE OF A KIND</span>' : ''}</div>
-    ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ Video</span>' : ''}</div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
-    <h3>${p.name}</h3>
+    ${p.image ? `<a class="product-photo" href="p/${p.sku}.html"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ Video</span>' : ''}</a>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
+    <h3><a href="p/${p.sku}.html">${p.name}</a></h3>
     <div class="product-origin">${p.sku} · ${p.origin}</div>
     <p class="product-desc">${p.desc}</p>
     ${p.specs ? `<div class="product-specs">${p.specs}</div>` : ''}
@@ -633,6 +642,9 @@ function closeLightbox(){
 grid.addEventListener('click', e => {
   const photo = e.target.closest('.product-photo');
   if(!photo) return;
+  // Plain click opens the quick-view gallery; modified clicks follow the link to the product page.
+  if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
   const id = photo.closest('.product-card').querySelector('.add-btn').dataset.id;
   const p = products.find(x => x.id === id);
   if(p) openLightbox(p);
