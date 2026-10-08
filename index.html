@@ -19,9 +19,12 @@
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <meta name="p:domain_verify" content="cc67ecd98a5428728e7bfcbcec2fa01c"/>
-<meta name="description" content="Wen Gu Hall (问古堂) curates authenticated Chinese literati antiques and fine crafts — Hetian jade bracelets and pendants, Yixing zisha teapots, ink-wash paintings and calligraphy. Every piece is traceable to its origin and hand-picked for discerning collectors.">
+<meta name="description" content="Wen Gu Hall (问古堂) curates Chinese literati antiques and fine crafts — Hetian jade bracelets and pendants, Yixing zisha teapots, ink paintings and calligraphy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"></noscript>
 <style>
   :root{
     --ink:#1A1714;
@@ -161,6 +164,11 @@
   .newsletter-form input:focus{outline:none;border-color:var(--paper-light);}
   .newsletter-form button{background:var(--ink);color:var(--paper-light);border:1px solid var(--ink);padding:14px 26px;font-size:12px;letter-spacing:2px;cursor:pointer;transition:background .25s;text-transform:uppercase;font-family:'Noto Sans SC',sans-serif;}
   .newsletter-form button:hover{background:var(--ink-soft);}
+  .newsletter-cta a{display:inline-flex;align-items:center;padding:14px 26px;font-family:'Noto Sans SC',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:background .25s,border-color .25s;}
+  .newsletter-cta .cta-line{border:1px solid rgba(232,220,196,0.5);border-right:none;color:var(--paper-light);}
+  .newsletter-cta .cta-line:hover{border-color:var(--paper-light);}
+  .newsletter-cta .cta-fill{background:var(--ink);border:1px solid var(--ink);color:var(--paper-light);}
+  .newsletter-cta .cta-fill:hover{background:var(--ink-soft);}
 
   footer{background:var(--ink);color:var(--text-on-ink);padding:70px 6vw 30px;}
   .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(176,141,87,0.2);}
@@ -202,6 +210,14 @@
   .toast .toast-seal{width:20px;height:20px;flex-shrink:0;}
 
   .product-photo{cursor:zoom-in;position:relative;}
+  a.product-photo{display:block;}
+  .product-card h3 a{color:inherit;text-decoration:none;}
+  .product-card h3 a:hover{color:var(--cinnabar);}
+  .cat-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin-top:28px;}
+  .cat-links a{border:1px solid rgba(42,33,26,0.25);padding:9px 16px;font-size:13.5px;text-decoration:none;color:var(--text-dark);transition:background .2s,color .2s;}
+  .cat-links a:hover{background:var(--jade);border-color:var(--jade);color:var(--paper-light);}
+  .cat-links a span{opacity:.55;margin-left:4px;font-size:12px;}
+  .cat-links-note{text-align:center;font-size:12px;opacity:.6;margin-top:12px;}
   .play-badge{position:absolute;right:10px;bottom:10px;background:rgba(26,23,20,0.75);color:var(--paper);border:1px solid var(--gold);font-size:11px;padding:4px 9px;letter-spacing:1px;pointer-events:none;}
   .lightbox{position:fixed;inset:0;background:rgba(26,23,20,0.9);z-index:400;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;opacity:0;pointer-events:none;transition:opacity .3s;padding:4vh 4vw;}
   .lightbox.open{opacity:1;pointer-events:auto;}
@@ -306,7 +322,7 @@
 <section class="products" id="products">
   <div class="section-head">
     <h2>Featured Pieces</h2>
-    <div class="desc">Forty-eight signature works spanning jade, zisha teaware, porcelain, ink painting, calligraphy and scholar curios.</div>
+    <div class="desc"><span data-piece-count>73</span> signature works spanning jade, zisha teaware, porcelain, ink painting, calligraphy and scholar curios.</div>
   </div>
   <div class="filter-bar" id="filterBar"></div>
   <div class="product-grid" id="productGrid"></div>
@@ -335,14 +351,15 @@
     <div class="desc">Jade, zisha, porcelain, ink painting, calligraphy, curios — six materials, six states of mind.</div>
   </div>
   <div class="cat-grid" id="catGrid"></div>
+  <nav class="cat-links" aria-label="Shop by category"><!--seo:catlinks--><a href="c/zisha-teapots.html">Yixing Zisha Teapots <span>28</span></a><a href="c/jade-pendants.html">Jade Pendants, Guanyin Amulets &amp; Jewelry <span>21</span></a><a href="c/jade-bracelets.html">Jade &amp; Natural Bead Bracelets <span>10</span></a><a href="c/porcelain-teacups.html">Porcelain Teacups &amp; Tea Bowls <span>9</span></a><a href="c/calligraphy-ink-painting.html">Chinese Calligraphy &amp; Ink Painting <span>3</span></a><a href="p/">All 73 pieces</a><!--/seo:catlinks--></nav>
 </section>
 
 <section class="newsletter" id="newsletter">
-  <h2>Every piece is one of a kind — once it sells, it is gone. Be the first to see new arrivals.</h2>
-  <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed — thank you');">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
-  </form>
+  <h2>Every piece is one of a kind — once it sells, it is gone. Message us to hear about new arrivals first.</h2>
+  <div class="newsletter-form newsletter-cta">
+    <a class="cta-line" href="https://wa.me/8613910049069?text=Hello%20Wen%20Gu%20Hall%2C%20please%20let%20me%20know%20about%20new%20arrivals." target="_blank" rel="noopener">WhatsApp us</a>
+    <a class="cta-fill" href="mailto:86886779@qq.com?subject=New%20arrivals%20-%20Wen%20Gu%20Hall">Email us</a>
+  </div>
 </section>
 
 <footer>
@@ -356,7 +373,7 @@
     </div>
     <div class="footer-col">
       <h4>Shop</h4>
-      <ul><li>Jade Bracelets</li><li>Buddhist Amulets</li><li>Zisha Teaware</li><li>Painting &amp; Calligraphy</li></ul>
+      <ul><!--seo:shoplinks--><li><a href="c/zisha-teapots.html">Yixing Zisha Teapots</a></li><li><a href="c/jade-pendants.html">Jade Pendants, Guanyin Amulets &amp; Jewelry</a></li><li><a href="c/jade-bracelets.html">Jade &amp; Natural Bead Bracelets</a></li><li><a href="c/porcelain-teacups.html">Porcelain Teacups &amp; Tea Bowls</a></li><li><a href="c/calligraphy-ink-painting.html">Chinese Calligraphy &amp; Ink Painting</a></li><!--/seo:shoplinks--></ul>
     </div>
     <div class="footer-col">
       <h4>Wen Gu Hall</h4>
@@ -385,7 +402,7 @@
     <div id="paypalButtons" style="margin-bottom:10px;"></div>
     <button class="cart-checkout" id="checkoutWa">Order via WhatsApp →</button>
     <button class="cart-checkout cart-checkout-alt" id="checkoutMail">Order via Email →</button>
-    <p class="checkout-note">We confirm availability within 24 hours and send you a secure payment link. No payment is taken on this site.</p>
+    <p class="checkout-note">Pay securely with PayPal above, or order via WhatsApp / email: we confirm availability within 24 hours and send you a secure payment link.</p>
   </div>
 </div>
 
@@ -477,6 +494,7 @@ const products = [
   {id:'rockbowl', sku:'T07', gallery:['images/T07-real.jpg'], name:'Rock-Form Tea Bowl with Speckled Glaze', origin:'Handmade Studio Ceramic', type:'Porcelain', price:166, desc:'A tea bowl sculpted like weathered stone, its dimpled walls under a speckled oatmeal glaze giving way to a smooth, quiet well.', image:'images/T07.jpg'},
   {id:'gourdcarv', sku:'W01', name:'Carved Gourd with Guanyin and Sutra', origin:'Hand-Carved Natural Gourd', type:'Carved Gourd', price:855, desc:'A natural gourd worked on both faces — Guanyin upon lotus on one side, brushed sutra text on the other.', image:'images/W01.jpg'},
 ];
+document.querySelectorAll('[data-piece-count]').forEach(el => { el.textContent = products.length; });
 
 const categories = [
   {name:'Jade',en:'JADE'},
@@ -522,8 +540,8 @@ function productCard(p){
   <div class="product-card${p.sold ? ' sold' : ''}">
     <span class="product-tag">${p.type}</span>
     <div class="card-badges">${p.sold ? '<span class="badge badge-sold">SOLD</span>' : ''}${!p.sold && p.isNew ? '<span class="badge badge-new">NEW</span>' : ''}${!p.sold ? '<span class="badge badge-ooak">ONE OF A KIND</span>' : ''}</div>
-    ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ Video</span>' : ''}</div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
-    <h3>${p.name}</h3>
+    ${p.image ? `<a class="product-photo" href="p/${p.sku}.html"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ Video</span>' : ''}</a>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
+    <h3><a href="p/${p.sku}.html">${p.name}</a></h3>
     <div class="product-origin">${p.sku} · ${p.origin}</div>
     <p class="product-desc">${p.desc}</p>
     ${p.specs ? `<div class="product-specs">${p.specs}</div>` : ''}
@@ -624,6 +642,9 @@ function closeLightbox(){
 grid.addEventListener('click', e => {
   const photo = e.target.closest('.product-photo');
   if(!photo) return;
+  // Plain click opens the quick-view gallery; modified clicks follow the link to the product page.
+  if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
   const id = photo.closest('.product-card').querySelector('.add-btn').dataset.id;
   const p = products.find(x => x.id === id);
   if(p) openLightbox(p);
@@ -635,6 +656,7 @@ document.getElementById('lightboxClose').addEventListener('click', closeLightbox
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
 let cart = {};
+let paypalActions = null; // set by the PayPal button's onInit
 try {
   const saved = JSON.parse(localStorage.getItem('wgh-cart') || '{}');
   for (const id in saved) {
@@ -675,18 +697,27 @@ function updateCartUI(){
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
   document.getElementById('cartTotal').textContent = '$' + total;
   saveCart();
+  syncPayPalState();
+}
+// An empty cart cannot be paid: disable the PayPal button so clicking it never opens (and instantly closes) the PayPal window.
+function syncPayPalState(){
+  if (!paypalActions) return;
+  if (Object.keys(cart).length) paypalActions.enable(); else paypalActions.disable();
 }
 
+function addToCart(p){
+  if(p.sold){ showToast('This piece has found its home'); return false; }
+  if(cart[p.id]){ showToast('One of a kind — already in your treasure box'); return false; }
+  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
+  updateCartUI();
+  showToast(`"${p.name}" added to your treasure box`);
+  return true;
+}
 document.getElementById('productGrid').addEventListener('click', e => {
   const btn = e.target.closest('.add-btn');
   if(!btn) return;
   const p = products.find(x => x.id === btn.dataset.id);
-  if(!p) return;
-  if(p.sold){ showToast('This piece has found its home'); return; }
-  if(cart[p.id]){ showToast('One of a kind — already in your treasure box'); return; }
-  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
-  updateCartUI();
-  showToast(`"${p.name}" added to your treasure box`);
+  if(p) addToCart(p);
 });
 
 document.getElementById('cartItems').addEventListener('click', e => {
@@ -698,7 +729,7 @@ document.getElementById('cartItems').addEventListener('click', e => {
 
 const drawer = document.getElementById('cartDrawer');
 const overlay = document.getElementById('cartOverlay');
-function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); }
+function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); loadPayPal(); }
 function closeCart(){ drawer.classList.remove('open'); overlay.classList.remove('open'); }
 document.getElementById('cartOpenBtn').addEventListener('click', openCart);
 document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
@@ -713,12 +744,18 @@ function buildOrderText(){
 }
 // Paste the Live Client ID from developer.paypal.com to enable on-site payments
 const PAYPAL_CLIENT_ID = 'AZAUdHJ_fPObN-WAMZWZNRT5F2DBm262FCzEXr95R71042sUsGrIqtQUp8oclUDGJJ4-KjBLeuA08Gvw';
-if (PAYPAL_CLIENT_ID) {
+// Load the PayPal SDK only when the treasure box is first opened (keeps it off the initial page load).
+let paypalRequested = false;
+function loadPayPal(){
+  if (!PAYPAL_CLIENT_ID || paypalRequested) return;
+  paypalRequested = true;
   const s = document.createElement('script');
   s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&currency=USD';
   s.onload = () => {
     paypal.Buttons({
       style: {layout: 'horizontal', color: 'gold', height: 45, tagline: false},
+      onInit: (data, actions) => { paypalActions = actions; syncPayPalState(); },
+      onClick: () => { if (Object.keys(cart).length === 0) showToast('Your treasure box is empty'); },
       createOrder: (data, actions) => {
         const items = Object.values(cart);
         if(items.length === 0){ showToast('Your treasure box is empty'); return Promise.reject(new Error('empty cart')); }
@@ -730,9 +767,12 @@ if (PAYPAL_CLIENT_ID) {
         cart = {};
         updateCartUI();
         showToast('Payment received — thank you! We will contact you shortly.');
-      })
+      }).catch(err => { console.error('PayPal capture failed', err); showToast('We could not confirm the payment. If PayPal charged you, please contact us with your receipt.'); }),
+      onCancel: () => showToast('Payment cancelled — your treasure box is still here'),
+      onError: err => { console.error('PayPal error', err); showToast('PayPal could not start the payment. Please try again, or order via WhatsApp / email below.'); }
     }).render('#paypalButtons');
   };
+  s.onerror = () => { paypalRequested = false; s.remove(); };
   document.head.appendChild(s);
 }
 
@@ -799,6 +839,21 @@ ldTag.type = 'application/ld+json';
 ldTag.textContent = JSON.stringify(ld);
 document.head.appendChild(ldTag);
 
+// Deep link from product pages: ?add=SKU puts that piece in the treasure box and opens the cart (PayPal loads with it)
+(function(){
+  const params = new URLSearchParams(location.search);
+  const q = params.get('add');
+  if(!q) return;
+  // Drop the parameter so a refresh keeps the cart (localStorage) without repeating the action
+  params.delete('add');
+  const qs = params.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  const key = q.toLowerCase();
+  const p = products.find(x => x.sku.toLowerCase() === key || x.id === key);
+  if(!p) return;
+  if(!p.sold){ addToCart(p); openCart(); }
+  else addToCart(p);
+})();
 // Deep link: ?p=SKU scrolls to the product card and opens its gallery
 (function(){
   const q = new URLSearchParams(location.search).get('p');

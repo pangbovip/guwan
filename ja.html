@@ -20,7 +20,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="description" content="問古堂は、産地までたどれる中国の文人趣味の骨董・工芸品を厳選。和田玉のブレスレットやペンダント、宜興の紫砂茶壺、水墨画や書をお届けします。一点一点、鑑定と真心を込めた逸品を、目の肥えたコレクターへ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"></noscript>
 <style>
   :root{
     --ink:#1A1714;
@@ -147,6 +150,11 @@
   .newsletter-form input:focus{outline:none;border-color:var(--paper-light);}
   .newsletter-form button{background:var(--ink);color:var(--paper-light);border:1px solid var(--ink);padding:14px 26px;font-size:13.5px;letter-spacing:1px;cursor:pointer;transition:background .25s;}
   .newsletter-form button:hover{background:var(--ink-soft);}
+  .newsletter-cta a{display:inline-flex;align-items:center;padding:14px 26px;font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:background .25s,border-color .25s;}
+  .newsletter-cta .cta-line{border:1px solid rgba(232,220,196,0.5);border-right:none;color:var(--paper-light);}
+  .newsletter-cta .cta-line:hover{border-color:var(--paper-light);}
+  .newsletter-cta .cta-fill{background:var(--ink);border:1px solid var(--ink);color:var(--paper-light);}
+  .newsletter-cta .cta-fill:hover{background:var(--ink-soft);}
 
   footer{background:var(--ink);color:var(--text-on-ink);padding:70px 6vw 30px;}
   .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(176,141,87,0.2);}
@@ -188,6 +196,14 @@
   .toast .toast-seal{width:20px;height:20px;flex-shrink:0;}
 
   .product-photo{cursor:zoom-in;position:relative;}
+  a.product-photo{display:block;}
+  .product-card h3 a{color:inherit;text-decoration:none;}
+  .product-card h3 a:hover{color:var(--cinnabar);}
+  .cat-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin-top:28px;}
+  .cat-links a{border:1px solid rgba(42,33,26,0.25);padding:9px 16px;font-size:13.5px;text-decoration:none;color:var(--text-dark);transition:background .2s,color .2s;}
+  .cat-links a:hover{background:var(--jade);border-color:var(--jade);color:var(--paper-light);}
+  .cat-links a span{opacity:.55;margin-left:4px;font-size:12px;}
+  .cat-links-note{text-align:center;font-size:12px;opacity:.6;margin-top:12px;}
   .play-badge{position:absolute;right:10px;bottom:10px;background:rgba(26,23,20,0.75);color:var(--paper);border:1px solid var(--gold);font-size:11px;padding:4px 9px;letter-spacing:1px;pointer-events:none;}
   .lightbox{position:fixed;inset:0;background:rgba(26,23,20,0.9);z-index:400;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;opacity:0;pointer-events:none;transition:opacity .3s;padding:4vh 4vw;}
   .lightbox.open{opacity:1;pointer-events:auto;}
@@ -292,7 +308,7 @@
 <section class="products" id="products">
   <div class="section-head">
     <h2>厳選逸品</h2>
-    <div class="desc">翡翠、紫砂急須、磁器、水墨画、書道、文玩――六つの分野を代表する四十八点。</div>
+    <div class="desc">翡翠、紫砂急須、磁器、水墨画、書道、文玩――六つの分野を代表する<span data-piece-count>73</span>点。</div>
   </div>
   <div class="filter-bar" id="filterBar"></div>
   <div class="product-grid" id="productGrid"></div>
@@ -321,14 +337,16 @@
     <div class="desc">翡翠、紫砂、磁器、水墨画、書道、文玩――六つの素材、六つの心境。</div>
   </div>
   <div class="cat-grid" id="catGrid"></div>
+  <nav class="cat-links" aria-label="カテゴリー"><!--seo:catlinks--><a href="c/zisha-teapots.html">紫砂急須 <span>28</span></a><a href="c/jade-pendants.html">翡翠ペンダント <span>21</span></a><a href="c/jade-bracelets.html">翡翠ブレスレット <span>10</span></a><a href="c/porcelain-teacups.html">磁器の茶杯・茶碗 <span>9</span></a><a href="c/calligraphy-ink-painting.html">書道・水墨画 <span>3</span></a><a href="p/">全73点の一覧</a><!--/seo:catlinks--></nav>
+  <p class="cat-links-note">※各カテゴリーページは英語です。</p>
 </section>
 
 <section class="newsletter" id="newsletter">
-  <h2>すべて一点物——売れたら二度と出会えません。新着を最初にご覧ください。</h2>
-  <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('登録が完了しました');">
-    <input type="email" placeholder="メールアドレスを入力" required>
-    <button type="submit">登録する</button>
-  </form>
+  <h2>すべて一点物——売れたら二度と出会えません。新着のご案内は、お気軽にご連絡ください。</h2>
+  <div class="newsletter-form newsletter-cta">
+    <a class="cta-line" href="https://wa.me/8613910049069?text=%E5%95%8F%E5%8F%A4%E5%A0%82%E6%A7%98%E3%80%81%E6%96%B0%E7%9D%80%E5%95%86%E5%93%81%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="noopener">WhatsAppで連絡</a>
+    <a class="cta-fill" href="mailto:86886779@qq.com?subject=%E6%96%B0%E7%9D%80%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85%EF%BC%88%E5%95%8F%E5%8F%A4%E5%A0%82%EF%BC%89">メールで連絡</a>
+  </div>
 </section>
 
 <footer>
@@ -342,7 +360,7 @@
     </div>
     <div class="footer-col">
       <h4>商品</h4>
-      <ul><li>翡翠ブレスレット</li><li>仏牌</li><li>紫砂急須</li><li>水墨画・書道</li></ul>
+      <ul><!--seo:shoplinks--><li><a href="c/zisha-teapots.html">紫砂急須</a></li><li><a href="c/jade-pendants.html">翡翠ペンダント</a></li><li><a href="c/jade-bracelets.html">翡翠ブレスレット</a></li><li><a href="c/porcelain-teacups.html">磁器の茶杯・茶碗</a></li><li><a href="c/calligraphy-ink-painting.html">書道・水墨画</a></li><!--/seo:shoplinks--></ul>
     </div>
     <div class="footer-col">
       <h4>問古堂について</h4>
@@ -371,7 +389,7 @@
     <div id="paypalButtons" style="margin-bottom:10px;"></div>
     <button class="cart-checkout" id="checkoutWa">WhatsAppで注文 →</button>
     <button class="cart-checkout cart-checkout-alt" id="checkoutMail">メールで注文 →</button>
-    <p class="checkout-note">在庫確認のうえ、24時間以内に安全なお支払いリンクをお送りします。当サイト上でお支払いが発生することはありません。</p>
+    <p class="checkout-note">上のPayPalで安全にお支払いいただくか、WhatsApp／メールでご注文ください。WhatsApp／メールでのご注文は、在庫確認のうえ24時間以内に安全なお支払いリンクをお送りします。</p>
   </div>
 </div>
 
@@ -463,6 +481,7 @@ const products = [
   {id:'rockbowl', sku:'T07', gallery:['images/T07-real.jpg'], name:'岩肌文 斑釉茶碗', origin:'手作り工房陶磁', type:'磁器', price:27000, desc:'風化した岩を思わせる凹凸の器肌に、粟粒の斑釉。見込みは静かに滑らかに仕上げた茶碗。', image:'images/T07.jpg'},
   {id:'gourdcarv', sku:'W01', name:'刻絵ひょうたん（観音・経文）', origin:'天然ひょうたん・手彫り', type:'刻絵ひょうたん', price:138000, desc:'天然のひょうたんの両面に観音像と経文を施した、文人の掌中の珍品。', image:'images/W01.jpg'},
 ];
+document.querySelectorAll('[data-piece-count]').forEach(el => { el.textContent = products.length; });
 
 const categories = [
   {name:'翡翠',en:'JADE'},
@@ -508,8 +527,8 @@ function productCard(p){
   <div class="product-card${p.sold ? ' sold' : ''}">
     <span class="product-tag">${p.type}</span>
     <div class="card-badges">${p.sold ? '<span class="badge badge-sold">SOLD</span>' : ''}${!p.sold && p.isNew ? '<span class="badge badge-new">NEW</span>' : ''}${!p.sold ? '<span class="badge badge-ooak">一点物</span>' : ''}</div>
-    ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ 動画</span>' : ''}</div>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
-    <h3>${p.name}</h3>
+    ${p.image ? `<a class="product-photo" href="p/${p.sku}.html"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.video ? '<span class="play-badge">▶ 動画</span>' : ''}</a>` : `<div class="product-icon"><svg width="60" height="60" viewBox="0 0 40 40">${icons[p.icon]}</svg></div>`}
+    <h3><a href="p/${p.sku}.html">${p.name}</a></h3>
     <div class="product-origin">${p.sku} · ${p.origin}</div>
     <p class="product-desc">${p.desc}</p>
     ${p.specs ? `<div class="product-specs">${p.specs}</div>` : ''}
@@ -610,6 +629,9 @@ function closeLightbox(){
 grid.addEventListener('click', e => {
   const photo = e.target.closest('.product-photo');
   if(!photo) return;
+  // Plain click opens the quick-view gallery; modified clicks follow the link to the product page.
+  if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
   const id = photo.closest('.product-card').querySelector('.add-btn').dataset.id;
   const p = products.find(x => x.id === id);
   if(p) openLightbox(p);
@@ -621,6 +643,7 @@ document.getElementById('lightboxClose').addEventListener('click', closeLightbox
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
 let cart = {};
+let paypalActions = null; // set by the PayPal button's onInit
 try {
   const saved = JSON.parse(localStorage.getItem('wgh-cart') || '{}');
   for (const id in saved) {
@@ -661,18 +684,27 @@ function updateCartUI(){
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
   document.getElementById('cartTotal').textContent = '¥' + total.toLocaleString();
   saveCart();
+  syncPayPalState();
+}
+// An empty cart cannot be paid: disable the PayPal button so clicking it never opens (and instantly closes) the PayPal window.
+function syncPayPalState(){
+  if (!paypalActions) return;
+  if (Object.keys(cart).length) paypalActions.enable(); else paypalActions.disable();
 }
 
+function addToCart(p){
+  if(p.sold){ showToast('この作品はご縁がありました'); return false; }
+  if(cart[p.id]){ showToast('一点物のため、お一人様1点限りです'); return false; }
+  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
+  updateCartUI();
+  showToast(`「${p.name}」を宝物箱に追加しました`);
+  return true;
+}
 document.getElementById('productGrid').addEventListener('click', e => {
   const btn = e.target.closest('.add-btn');
   if(!btn) return;
   const p = products.find(x => x.id === btn.dataset.id);
-  if(!p) return;
-  if(p.sold){ showToast('この作品はご縁がありました'); return; }
-  if(cart[p.id]){ showToast('一点物のため、お一人様1点限りです'); return; }
-  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
-  updateCartUI();
-  showToast(`「${p.name}」を宝物箱に追加しました`);
+  if(p) addToCart(p);
 });
 
 document.getElementById('cartItems').addEventListener('click', e => {
@@ -684,7 +716,7 @@ document.getElementById('cartItems').addEventListener('click', e => {
 
 const drawer = document.getElementById('cartDrawer');
 const overlay = document.getElementById('cartOverlay');
-function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); }
+function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); loadPayPal(); }
 function closeCart(){ drawer.classList.remove('open'); overlay.classList.remove('open'); }
 document.getElementById('cartOpenBtn').addEventListener('click', openCart);
 document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
@@ -699,12 +731,18 @@ function buildOrderText(){
 }
 // developer.paypal.com の Live Client ID を貼り付けるとサイト内決済が有効になります
 const PAYPAL_CLIENT_ID = 'AZAUdHJ_fPObN-WAMZWZNRT5F2DBm262FCzEXr95R71042sUsGrIqtQUp8oclUDGJJ4-KjBLeuA08Gvw';
-if (PAYPAL_CLIENT_ID) {
+// Load the PayPal SDK only when the treasure box is first opened (keeps it off the initial page load).
+let paypalRequested = false;
+function loadPayPal(){
+  if (!PAYPAL_CLIENT_ID || paypalRequested) return;
+  paypalRequested = true;
   const s = document.createElement('script');
   s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&currency=JPY';
   s.onload = () => {
     paypal.Buttons({
       style: {layout: 'horizontal', color: 'gold', height: 45, tagline: false},
+      onInit: (data, actions) => { paypalActions = actions; syncPayPalState(); },
+      onClick: () => { if (Object.keys(cart).length === 0) showToast('宝物箱は空です'); },
       createOrder: (data, actions) => {
         const items = Object.values(cart);
         if(items.length === 0){ showToast('宝物箱は空です'); return Promise.reject(new Error('empty cart')); }
@@ -716,9 +754,12 @@ if (PAYPAL_CLIENT_ID) {
         cart = {};
         updateCartUI();
         showToast('お支払いを確認しました。ありがとうございます！');
-      })
+      }).catch(err => { console.error('PayPal capture failed', err); showToast('お支払いを確認できませんでした。PayPalで請求されている場合は、領収書を添えてご連絡ください。'); }),
+      onCancel: () => showToast('お支払いはキャンセルされました。宝物箱の中身はそのままです'),
+      onError: err => { console.error('PayPal error', err); showToast('PayPalの決済を開始できませんでした。もう一度お試しいただくか、下のWhatsApp／メールでご注文ください。'); }
     }).render('#paypalButtons');
   };
+  s.onerror = () => { paypalRequested = false; s.remove(); };
   document.head.appendChild(s);
 }
 
@@ -785,6 +826,21 @@ ldTag.type = 'application/ld+json';
 ldTag.textContent = JSON.stringify(ld);
 document.head.appendChild(ldTag);
 
+// Deep link from product pages: ?add=SKU puts that piece in the treasure box and opens the cart (PayPal loads with it)
+(function(){
+  const params = new URLSearchParams(location.search);
+  const q = params.get('add');
+  if(!q) return;
+  // Drop the parameter so a refresh keeps the cart (localStorage) without repeating the action
+  params.delete('add');
+  const qs = params.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  const key = q.toLowerCase();
+  const p = products.find(x => x.sku.toLowerCase() === key || x.id === key);
+  if(!p) return;
+  if(!p.sold){ addToCart(p); openCart(); }
+  else addToCart(p);
+})();
 // Deep link: ?p=SKU scrolls to the product card and opens its gallery
 (function(){
   const q = new URLSearchParams(location.search).get('p');
