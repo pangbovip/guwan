@@ -256,7 +256,7 @@ $gallery
     <div class="ship">Free insured worldwide shipping &middot; one of a kind, only one available</div>
     <p class="desc">$desc</p>
     $specs
-    <a class="btn btn-primary" href="../?p=$sku">Add to treasure box &rarr;</a>
+    <a class="btn btn-primary" href="../?add=$sku">Add to treasure box &rarr;</a>
     <a class="btn btn-alt" href="$wa" target="_blank" rel="noopener">Ask on WhatsApp</a>
     <a class="btn btn-alt" href="$mail">Ask by email</a>
     <section class="spec" aria-label="Documentation before purchase">

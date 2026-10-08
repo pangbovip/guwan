@@ -705,16 +705,19 @@ function syncPayPalState(){
   if (Object.keys(cart).length) paypalActions.enable(); else paypalActions.disable();
 }
 
+function addToCart(p){
+  if(p.sold){ showToast('This piece has found its home'); return false; }
+  if(cart[p.id]){ showToast('One of a kind — already in your treasure box'); return false; }
+  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
+  updateCartUI();
+  showToast(`"${p.name}" added to your treasure box`);
+  return true;
+}
 document.getElementById('productGrid').addEventListener('click', e => {
   const btn = e.target.closest('.add-btn');
   if(!btn) return;
   const p = products.find(x => x.id === btn.dataset.id);
-  if(!p) return;
-  if(p.sold){ showToast('This piece has found its home'); return; }
-  if(cart[p.id]){ showToast('One of a kind — already in your treasure box'); return; }
-  cart[p.id] = {id: p.id, sku: p.sku, name: p.name, origin: p.origin, price: p.price, qty: 1};
-  updateCartUI();
-  showToast(`"${p.name}" added to your treasure box`);
+  if(p) addToCart(p);
 });
 
 document.getElementById('cartItems').addEventListener('click', e => {
@@ -836,6 +839,21 @@ ldTag.type = 'application/ld+json';
 ldTag.textContent = JSON.stringify(ld);
 document.head.appendChild(ldTag);
 
+// Deep link from product pages: ?add=SKU puts that piece in the treasure box and opens the cart (PayPal loads with it)
+(function(){
+  const params = new URLSearchParams(location.search);
+  const q = params.get('add');
+  if(!q) return;
+  // Drop the parameter so a refresh keeps the cart (localStorage) without repeating the action
+  params.delete('add');
+  const qs = params.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  const key = q.toLowerCase();
+  const p = products.find(x => x.sku.toLowerCase() === key || x.id === key);
+  if(!p) return;
+  if(!p.sold){ addToCart(p); openCart(); }
+  else addToCart(p);
+})();
 // Deep link: ?p=SKU scrolls to the product card and opens its gallery
 (function(){
   const q = new URLSearchParams(location.search).get('p');
