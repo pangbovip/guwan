@@ -644,6 +644,7 @@ document.getElementById('lightboxClose').addEventListener('click', closeLightbox
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
 let cart = {};
+let paypalActions = null; // set by the PayPal button's onInit
 try {
   const saved = JSON.parse(localStorage.getItem('wgh-cart') || '{}');
   for (const id in saved) {
@@ -684,6 +685,12 @@ function updateCartUI(){
   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
   document.getElementById('cartTotal').textContent = '$' + total;
   saveCart();
+  syncPayPalState();
+}
+// An empty cart cannot be paid: disable the PayPal button so clicking it never opens (and instantly closes) the PayPal window.
+function syncPayPalState(){
+  if (!paypalActions) return;
+  if (Object.keys(cart).length) paypalActions.enable(); else paypalActions.disable();
 }
 
 document.getElementById('productGrid').addEventListener('click', e => {
@@ -732,6 +739,8 @@ function loadPayPal(){
   s.onload = () => {
     paypal.Buttons({
       style: {layout: 'horizontal', color: 'gold', height: 45, tagline: false},
+      onInit: (data, actions) => { paypalActions = actions; syncPayPalState(); },
+      onClick: () => { if (Object.keys(cart).length === 0) showToast('Your treasure box is empty'); },
       createOrder: (data, actions) => {
         const items = Object.values(cart);
         if(items.length === 0){ showToast('Your treasure box is empty'); return Promise.reject(new Error('empty cart')); }
@@ -743,7 +752,9 @@ function loadPayPal(){
         cart = {};
         updateCartUI();
         showToast('Payment received — thank you! We will contact you shortly.');
-      })
+      }).catch(err => { console.error('PayPal capture failed', err); showToast('We could not confirm the payment. If PayPal charged you, please contact us with your receipt.'); }),
+      onCancel: () => showToast('Payment cancelled — your treasure box is still here'),
+      onError: err => { console.error('PayPal error', err); showToast('PayPal could not start the payment. Please try again, or order via WhatsApp / email below.'); }
     }).render('#paypalButtons');
   };
   s.onerror = () => { paypalRequested = false; s.remove(); };
