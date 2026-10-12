@@ -90,7 +90,10 @@ PAGE = Template('''<!DOCTYPE html>
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"></noscript>
 <script type="application/ld+json">$ld</script>
 <style>
   :root{--ink:#1A1714;--paper:#E8DCC4;--paper-light:#F1E8D6;--cinnabar:#9E2B25;--cinnabar-dark:#7A211C;--gold:#B08D57;--text-dark:#2A211A;}
@@ -199,7 +202,10 @@ HUB = Template('''<!DOCTYPE html>
 <link rel="icon" href="$favicon">
 <meta name="description" content="Every piece currently offered by Wen Gu Hall - Hetian jade, Yixing zisha teaware, Chinese porcelain, ink painting and calligraphy, each with its own page.">
 <link rel="canonical" href="https://wenguhall.com/p/">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:wght@400;600&display=swap"></noscript>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#E8DCC4;color:#2A211A;font-family:'Noto Sans SC',sans-serif;font-size:15px;line-height:1.8;}
