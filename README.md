@@ -1,6 +1,6 @@
 # Wen Gu Hall · 问古堂
 
-**Curated Chinese antiquities & fine crafts — Hetian jade, Yixing zisha teapots, porcelain, ink painting, calligraphy and scholar curios.**
+**Curated traditional Chinese crafts — Hetian jade, Yixing zisha teapots, porcelain, ink painting, calligraphy and scholar curios.**
 
 🌐 **Visit the store: [wenguhall.com](https://wenguhall.com/)**
 🇯🇵 日本語: [wenguhall.com/ja.html](https://wenguhall.com/ja.html)
