@@ -178,10 +178,11 @@ SHARED_CSS = """
 def footer_html(prefix):
     cats = ' &middot; '.join('<a href="%sc/%s.html">%s</a>' % (prefix, c['slug'], esc(c['nav']))
                              for c in CATEGORIES)
-    return ('<footer>\n  <div>%s</div>\n  <div><a href="%s">Wen Gu Hall</a> &middot; <a href="%sp/">All pieces</a> &middot; '
-            '<a href="%spolicies.html">Shipping &amp; Returns</a> &middot; <a href="%sja.html">日本語</a></div>\n'
+    return ('<footer>\n  <div>%s</div>\n  <div><a href="%s">Wen Gu Hall</a> &middot; <a href="%sstory.html">Our Story</a> &middot; '
+            '<a href="%sp/">All pieces</a> &middot; <a href="%spolicies.html">Shipping &amp; Returns</a> &middot; '
+            '<a href="%sterms.html">Terms</a> &middot; <a href="%sja.html">日本語</a></div>\n'
             '  <div>&copy; 2026 Wen Gu Hall &middot; 86886779@qq.com &middot; WhatsApp +86 139 1004 9069</div>\n</footer>') % (
-        cats, prefix or './', prefix, prefix, prefix)
+        cats, prefix or './', prefix, prefix, prefix, prefix, prefix)
 
 
 PAGE = Template('''<!DOCTYPE html>
@@ -561,6 +562,9 @@ def hub(items):
 def sitemap(items):
     today = datetime.date.today().isoformat()
     urls = [(SITE + '/', '1.0'), (SITE + '/ja.html', '0.9'), (SITE + '/p/', '0.8'),
+            (SITE + '/story.html', '0.5'), (SITE + '/story-ja.html', '0.4'),
+            (SITE + '/terms.html', '0.4'), (SITE + '/terms-ja.html', '0.3'),
+            (SITE + '/consign.html', '0.3'), (SITE + '/consign-ja.html', '0.3'),
             (SITE + '/policies.html', '0.3'), (SITE + '/policies-ja.html', '0.3')]
     urls += [(cat_url(c), '0.8') for c in CATEGORIES]
     urls += [('%s/p/%s.html' % (SITE, p['sku']), '0.7') for p in items]
