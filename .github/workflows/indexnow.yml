@@ -8,8 +8,13 @@ on:
       - "ja.html"
       - "policies.html"
       - "policies-ja.html"
+      - "story.html"
+      - "terms.html"
+      - "consign.html"
+      - "consign-ja.html"
       - "sitemap.xml"
       - "p/**"
+      - "c/**"
       - "assets/**"
   workflow_dispatch:
 
@@ -30,7 +35,7 @@ jobs:
             grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's|</\?loc>||g' > urls.txt
           else
             git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
-              | grep -E '^(index|ja|policies|policies-ja)\.html$|^p/.*\.html$' \
+              | grep -E '^(index|ja|policies|policies-ja|story|terms|consign|consign-ja)\.html$|^(p|c)/.*\.html$' \
               | sed -e 's|^index\.html$|/|' \
                     -e 's|^p/index\.html$|/p/|' \
                     -e 's|^\(.*\)$|/\1|' \
