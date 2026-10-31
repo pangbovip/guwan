@@ -3,7 +3,7 @@
 <channel>
 <title>Wen Gu Hall</title>
 <link>https://wenguhall.com/</link>
-<description>Wen Gu Hall product feed</description>
+<description>Wen Gu Hall product feed (USD; free listings target: United States)</description>
 <item>
   <g:id>T09</g:id>
   <title>Teadust-Glaze Tea Cup with Raised Gold and Enamel - Jingdezhen, Jiangxi</title>
@@ -21,7 +21,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T08</g:id>
@@ -41,7 +48,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J01</g:id>
@@ -61,7 +75,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J02</g:id>
@@ -80,7 +101,14 @@
   <g:color>Honey</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J03</g:id>
@@ -99,7 +127,14 @@
   <g:color>Grey</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J04</g:id>
@@ -117,7 +152,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J05</g:id>
@@ -136,7 +178,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J06</g:id>
@@ -154,7 +203,14 @@
   <g:color>Black</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J08</g:id>
@@ -173,7 +229,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J09</g:id>
@@ -192,7 +255,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J10</g:id>
@@ -213,7 +283,14 @@
   <g:color>Yellow</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J11</g:id>
@@ -231,7 +308,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>P01</g:id>
@@ -246,7 +330,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>500044</g:google_product_category>
   <g:product_type>Chinese Calligraphy &amp; Ink Painting &gt; Ink Painting</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>C01</g:id>
@@ -261,7 +352,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>500044</g:google_product_category>
   <g:product_type>Chinese Calligraphy &amp; Ink Painting &gt; Calligraphy</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>C02</g:id>
@@ -276,7 +374,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>500044</g:google_product_category>
   <g:product_type>Chinese Calligraphy &amp; Ink Painting &gt; Calligraphy</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J12</g:id>
@@ -295,7 +400,14 @@
   <g:color>Black</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J13</g:id>
@@ -314,7 +426,14 @@
   <g:color>Celadon</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J14</g:id>
@@ -332,7 +451,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J15</g:id>
@@ -350,7 +476,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J16</g:id>
@@ -368,7 +501,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J17</g:id>
@@ -386,7 +526,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J18</g:id>
@@ -405,7 +552,14 @@
   <g:color>Celadon</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z02</g:id>
@@ -420,7 +574,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z03</g:id>
@@ -435,7 +596,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z04</g:id>
@@ -450,7 +618,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z05</g:id>
@@ -465,7 +640,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z06</g:id>
@@ -480,7 +662,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J19</g:id>
@@ -495,7 +684,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>218</g:google_product_category>
   <g:product_type>All pieces &gt; Raw Jade</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J20</g:id>
@@ -513,7 +709,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J21</g:id>
@@ -532,7 +735,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J22</g:id>
@@ -551,7 +761,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J23</g:id>
@@ -570,7 +787,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J24</g:id>
@@ -591,7 +815,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J25</g:id>
@@ -612,7 +843,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J26</g:id>
@@ -632,7 +870,14 @@
   <g:color>Blue/Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J27</g:id>
@@ -654,7 +899,14 @@
   <g:color>Green</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J28</g:id>
@@ -674,7 +926,14 @@
   <g:color>Brown</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J29</g:id>
@@ -695,7 +954,14 @@
   <g:color>Multicolor</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J30</g:id>
@@ -717,7 +983,14 @@
   <g:color>Turquoise</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J31</g:id>
@@ -737,7 +1010,14 @@
   <g:color>Black/White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>J32</g:id>
@@ -758,7 +1038,14 @@
   <g:color>White</g:color>
   <g:gender>unisex</g:gender>
   <g:age_group>adult</g:age_group>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z07</g:id>
@@ -773,7 +1060,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z08</g:id>
@@ -788,7 +1082,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z09</g:id>
@@ -803,7 +1104,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z10</g:id>
@@ -818,7 +1126,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z11</g:id>
@@ -833,7 +1148,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z12</g:id>
@@ -848,7 +1170,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z13</g:id>
@@ -863,7 +1192,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z14</g:id>
@@ -878,7 +1214,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z15</g:id>
@@ -893,7 +1236,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z16</g:id>
@@ -909,7 +1259,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z17</g:id>
@@ -924,7 +1281,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z18</g:id>
@@ -939,7 +1303,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z19</g:id>
@@ -954,7 +1325,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z20</g:id>
@@ -969,7 +1347,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z21</g:id>
@@ -987,7 +1372,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z22</g:id>
@@ -1004,7 +1396,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z23</g:id>
@@ -1021,7 +1420,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>2169</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z24</g:id>
@@ -1037,7 +1443,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z25</g:id>
@@ -1053,7 +1466,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z26</g:id>
@@ -1070,7 +1490,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>2169</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z27</g:id>
@@ -1087,7 +1514,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z28</g:id>
@@ -1104,7 +1538,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>Z29</g:id>
@@ -1121,7 +1562,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>652</g:google_product_category>
   <g:product_type>Yixing Zisha Teapots &gt; Zisha Teaware</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T01</g:id>
@@ -1136,7 +1584,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>3498</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T02</g:id>
@@ -1151,7 +1606,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>3498</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T03</g:id>
@@ -1169,7 +1631,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T04</g:id>
@@ -1185,7 +1654,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T05</g:id>
@@ -1201,7 +1677,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T06</g:id>
@@ -1217,7 +1700,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>T07</g:id>
@@ -1233,7 +1723,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>6049</g:google_product_category>
   <g:product_type>Porcelain Teacups &amp; Tea Bowls &gt; Porcelain</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 <item>
   <g:id>W01</g:id>
@@ -1248,7 +1745,14 @@
   <g:identifier_exists>no</g:identifier_exists>
   <g:google_product_category>696</g:google_product_category>
   <g:product_type>All pieces &gt; Carved Gourd</g:product_type>
-  <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price><g:min_handling_time>3</g:min_handling_time><g:max_handling_time>5</g:max_handling_time><g:min_transit_time>7</g:min_transit_time><g:max_transit_time>15</g:max_transit_time></g:shipping>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:price>0.00 USD</g:price>
+    <g:min_handling_time>3</g:min_handling_time>
+    <g:max_handling_time>5</g:max_handling_time>
+    <g:min_transit_time>7</g:min_transit_time>
+    <g:max_transit_time>15</g:max_transit_time>
+  </g:shipping>
 </item>
 </channel>
 </rss>

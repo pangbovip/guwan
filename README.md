@@ -15,3 +15,9 @@ Product data lives in the `products` array in `index.html` (English, USD) and `j
 After changing products, run `python tools/build-product-pages.py` from the repo root. It regenerates
 `p/{SKU}.html`, the category landing pages in `c/` (categories and their copy: `tools/seo_content.py`),
 `p/index.html`, `sitemap.xml`, and the category links in `index.html` / `ja.html` (between `<!--seo:...-->` markers).
+
+## Google Merchant feed
+
+`feed.xml` / `feed.tsv` power Google Merchant Center free listings (**USD**, target country **United States**).
+Regenerate with `python3 tools/build-merchant-feed.py` after product changes.
+Setup and Merchant Center UI steps: [docs/merchant-center.md](docs/merchant-center.md).
